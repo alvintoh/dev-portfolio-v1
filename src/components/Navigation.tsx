@@ -14,19 +14,29 @@ export function Navigation() {
   const [activeSection, setActiveSection] = useState("about");
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(() => {});
-      },
-      { rootMargin: "-50% 0px -50% 0px" },
-    );
+    const sectionIds = navItems.map(({ href }) => href.replace("#", ""));
 
-    navItems.forEach(({ href }) => {
-      const el = document.querySelector(href);
-      if (el) observer.observe(el);
-    });
+    const handleScroll = () => {
+      // The threshold is 30% from the top of the viewport.
+      // The active section is the last one whose top edge has crossed that point.
+      const threshold = window.innerHeight * 0.3;
+      let current = sectionIds[0];
 
-    return () => observer.disconnect();
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        if (el.getBoundingClientRect().top <= threshold) {
+          current = id;
+        }
+      }
+
+      setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (

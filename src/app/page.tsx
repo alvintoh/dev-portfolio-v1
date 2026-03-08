@@ -17,11 +17,11 @@ export default function Home() {
           {/* Left Sidebar - Fixed on desktop */}
           <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[48%] lg:flex-col lg:justify-between lg:py-24">
             <div>
-              <h1 className="text-4xl sm:text-5xl tracking-tight text-[#e2e8f0]">
-                <Link href="/">Jane Developer</Link>
+              <h1 className="text-5xl font-bold sm:text-5xl tracking-tight text-[#e2e8f0]">
+                <Link href="/">Alvin Toh</Link>
               </h1>
               <h2 className="mt-3 text-lg sm:text-xl tracking-tight text-[#e2e8f0]">
-                Senior Frontend Engineer
+                Software Engineer
               </h2>
               <p className="mt-4 max-w-xs text-[#8892b0]">
                 I build accessible, pixel-perfect digital experiences for the

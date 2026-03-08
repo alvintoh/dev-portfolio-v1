@@ -4,7 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 
 const experiences = [
   {
-    period: "2024 — Present",
+    period: "2024 — PRESENT",
     title: "Senior Frontend Engineer",
     company: "Acme Corp",
     url: "#",
@@ -56,7 +56,7 @@ export function ExperienceSection() {
             rel="noopener noreferrer"
             className="group grid grid-cols-1 sm:grid-cols-[140px_1fr] gap-1 sm:gap-6 p-4 -mx-4 rounded-lg transition-all duration-200 hover:bg-[#112240]/60 hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] hover:drop-shadow-lg"
           >
-            <span className="text-xs text-[#8892b0] mt-1 whitespace-nowrap">
+            <span className="text-xs font-bold text-[#8892b0] mt-1 whitespace-nowrap">
               {exp.period}
             </span>
             <div>
