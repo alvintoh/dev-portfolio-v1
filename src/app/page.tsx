@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { AboutSection } from "@/components/AboutSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
+import { HeroSection } from "@/components/HeroSection";
 import { Navigation } from "@/components/Navigation";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { SocialLinks } from "@/components/SocialLinks";
@@ -9,31 +10,18 @@ import { MouseGlow } from "../components/MouseGlow";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0a192f] text-[#8892b0] relative">
+    <div className="min-h-screen relative">
       <MouseGlow />
 
-      <div className="mx-auto min-h-screen max-w-7xl px-6 py-12 font-sans md:px-12 md:py-16 lg:py-0">
+      <div className="mx-auto min-h-screen max-w-7xl px-6 py-16 md:px-12 md:py-16 lg:py-0">
         <div className="lg:flex lg:justify-between lg:gap-16">
           {/* Left Sidebar - Fixed on desktop */}
-          <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[48%] lg:flex-col lg:justify-between lg:py-24">
-            <div>
-              <h1 className="text-5xl font-bold sm:text-5xl tracking-tight text-[#e2e8f0]">
-                <Link href="/">Alvin Toh</Link>
-              </h1>
-              <h2 className="mt-3 text-lg sm:text-xl tracking-tight text-[#e2e8f0]">
-                Software Engineer
-              </h2>
-              <p className="mt-4 max-w-xs text-[#8892b0]">
-                I build accessible, pixel-perfect digital experiences for the
-                web.
-              </p>
-
-              <div className="mt-12">
-                <Navigation />
-              </div>
+          <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[48%] lg:flex-col lg:py-24">
+            <HeroSection />
+            <div className="mt-8 lg:mt-20">
+              <Navigation />
             </div>
-
-            <div className="mt-8 lg:mt-0">
+            <div className="mt-8 lg:mt-auto">
               <SocialLinks />
             </div>
           </header>

@@ -40,7 +40,7 @@ export function Navigation() {
   }, []);
 
   return (
-    <nav className="hidden lg:block">
+    <nav className="hidden lg:block font-bold">
       <ul className="flex flex-col gap-4">
         {navItems.map(({ label, href }) => {
           const sectionId = href.replace("#", "");
