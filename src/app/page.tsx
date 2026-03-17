@@ -13,7 +13,7 @@ export default function Home() {
     <div className="min-h-screen relative">
       <MouseGlow />
 
-      <div className="mx-auto min-h-screen max-w-7xl px-6 py-16 md:px-12 md:py-16 lg:py-0">
+      <div className="mx-auto min-h-screen max-w-7xl px-6 py-12 md:px-12 md:py-16 lg:py-0">
         <div className="lg:flex lg:justify-between lg:gap-16">
           {/* Left Sidebar - Fixed on desktop */}
           <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[48%] lg:flex-col lg:py-24">
