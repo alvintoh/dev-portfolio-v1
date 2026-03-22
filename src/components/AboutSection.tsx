@@ -1,11 +1,36 @@
+import { heroData } from "@/data/hero-data";
 import Link from "next/dist/client/link";
+import Image from "next/image";
 
 export function AboutSection() {
+  const avatarFallback = heroData.name
+    .split(" ")
+    .map((n) => n[0])
+    .join("")
+    .toUpperCase();
+
   return (
     <section id="about" className="scroll-mt-24 lg:scroll-mt-0">
       <h2 className="text-sm tracking-widest uppercase text-[#e2e8f0] mb-6 lg:hidden sticky top-0 bg-[#0a192f]/90 backdrop-blur-sm py-4 z-10">
         About
       </h2>
+      <div className="sm:flex sm:flex-row sm:gap-6 sm:mb-20 sm:justify-around sm:items-center">
+        <div className="hidden sm:block relative w-40 h-40 shrink-5 ring-2 ring-accent/30 rounded-full">
+          {heroData.avatar ?
+            <Image
+              src={heroData.avatar}
+              alt={`Portrait of ${heroData.name}`}
+              fill
+              sizes="160px"
+              className="rounded-full object-cover"
+              priority
+            />
+          : <div className="w-full h-full rounded-full bg-heading flex items-center justify-center text-background font-bold text-3xl leading-none">
+              {avatarFallback}
+            </div>
+          }
+        </div>
+      </div>
       <div className="flex flex-col gap-4 text-[#8892b0]">
         <p>
           Back in 2012, I decided to try my hand at creating custom Tumblr

@@ -18,7 +18,7 @@ export default function Home() {
           {/* Left Sidebar - Fixed on desktop */}
           <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[48%] lg:flex-col lg:py-24">
             <HeroSection />
-            <div className="mt-8 lg:mt-20">
+            <div className="mt-8 lg:mt-10">
               <Navigation />
             </div>
             <div className="mt-8 lg:mt-auto">
@@ -35,12 +35,12 @@ export default function Home() {
             </div>
 
             {/* Footer */}
-            <footer className="mt-24 pb-12 text-sm text-[#8892b0]">
+            <footer className="mt-24 pb-12 text-sm text-foreground">
               <p>
                 Loosely designed in{" "}
                 <Link
                   href="https://www.figma.com/"
-                  className="text-[#e2e8f0] hover:text-[#64ffda] transition-colors"
+                  className="text-heading hover:text-accent transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -49,7 +49,7 @@ export default function Home() {
                 and coded in{" "}
                 <Link
                   href="https://code.visualstudio.com/"
-                  className="text-[#e2e8f0] hover:text-[#64ffda] transition-colors"
+                  className="text-heading hover:text-accent transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -58,7 +58,7 @@ export default function Home() {
                 . Built with{" "}
                 <Link
                   href="https://react.dev/"
-                  className="text-[#e2e8f0] hover:text-[#64ffda] transition-colors"
+                  className="text-heading hover:text-accent transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -67,7 +67,7 @@ export default function Home() {
                 and{" "}
                 <Link
                   href="https://tailwindcss.com/"
-                  className="text-[#e2e8f0] hover:text-[#64ffda] transition-colors"
+                  className="text-heading hover:text-accent transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -76,7 +76,7 @@ export default function Home() {
                 , deployed with{" "}
                 <Link
                   href="https://vercel.com/"
-                  className="text-[#e2e8f0] hover:text-[#64ffda] transition-colors"
+                  className="text-heading hover:text-accent transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
