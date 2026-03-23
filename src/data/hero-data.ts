@@ -7,6 +7,6 @@ export type HeroData = {
 
 export const heroData: HeroData = {
   name: "Alvin Toh",
-  title: "Full Stack Software Engineer",
-  bio: "5+ years in the TypeScript, JavaScript and Java trenches. I build cloud-native apps that are fast, clean, and AI augmented so the robots don't have to guess.",
+  title: "Full Stack Agentic Engineer",
+  bio: "5+ years refining TS, JS, and Java. I build Agentic AI workflows and cloud-native apps that give robots a brain while I keep mastering the next.",
 };

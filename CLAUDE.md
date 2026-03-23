@@ -1,19 +1,6 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
-## Agents
-
-Four specialised agents live in `.claude/agents/`. Invoke the one that matches your task:
-
-| Agent ID | File | Use when… |
-|---|---|---|
-| `frontend` | `frontend.md` | Reviewing React, Next.js App Router, TypeScript, Tailwind code |
-| `backend` | `backend.md` | Reviewing Route Handlers, Server Actions, TypeScript server-side code |
-| `design` | `design.md` | Reviewing layouts, spacing, hierarchy, motion, states, accessibility |
-| `portfolio` | `portfolio.md` | Ideas for features, content, SEO, and recruiter experience |
-
----
+Guidance for Claude Code when working in this repository.
 
 ## Commands
 
@@ -22,39 +9,93 @@ bun dev        # Start development server
 bun build      # Production build
 bun start      # Start production server
 bun lint       # Run ESLint
+bun typecheck  # Type-check without emitting (tsc --noEmit)
 ```
+
+**No environment variables required.**
 
 ## Architecture
 
-Single-page Next.js 16 portfolio using the App Router. All content renders on one page (`src/app/page.tsx`) with anchor-based section navigation (`#about`, `#experience`, `#projects`).
+Single-page Next.js 16 portfolio using App Router. All content renders on `src/app/page.tsx` with anchor-based navigation (`#about`, `#experience`, `#projects`).
 
-**Layout:** Two-column on desktop — fixed left sidebar (hero + nav + social links) and scrollable right main content. On mobile, the layout stacks vertically.
+**Layout:** Fixed left sidebar (hero + nav + social links) on desktop; stacks vertically on mobile.
 
-**Styling:** Tailwind CSS v4 via PostCSS. Theme colors defined as CSS custom properties in `src/app/globals.css`:
-- `--background: #0a192f` (dark blue)
-- `--foreground: #8892b0` (slate gray)
-- `--accent: #64ffda` (cyan)
+**Styling:** Tailwind CSS v4 via PostCSS. Theme tokens in `src/app/globals.css`:
 
-**Path alias:** `@/*` maps to `./src/*`.
+- `--background: #0a192f` · `--foreground: #8892b0` · `--accent: #64ffda`
+
+**Path alias:** `@/*` → `./src/*`
 
 ## Content & Data
 
-Portfolio content lives in two places:
-- `src/data/hero-data.ts` — hero section data (name, title, bio, avatar)
-- Inline arrays inside section components — experience cards and project cards are defined directly in `ExperienceSection.tsx` and `ProjectsSection.tsx`
-
-Static images go in `public/images/`.
+- `src/data/hero-data.ts` — hero section (name, title, bio, avatar)
+- Inline arrays in `ExperienceSection.tsx` and `ProjectsSection.tsx` — experience and project cards
+- Static images → `public/images/`
 
 ## Key Components
 
-- `Navigation.tsx` — client component; uses `IntersectionObserver` to highlight the active section as the user scrolls
-- `MouseGlow.tsx` — client component; ambient glow that follows the cursor (desktop only)
+- `Navigation.tsx` — `IntersectionObserver` for active section highlight
+- `MouseGlow.tsx` — cursor ambient glow (desktop only)
 - `figma/ImageWithFallback.tsx` — `<Image>` wrapper with error fallback
 
-## ESLint
+## Tooling
 
-Import ordering is enforced (alphabetical, grouped by type). The config is in `eslint.config.mjs` and extends `eslint-config-next`.
+- **ESLint:** Import ordering enforced (alphabetical, grouped). Config in `eslint.config.mjs`.
+- **React Compiler:** `reactCompiler: true` in `next.config.ts` — automatic memoization enabled.
+- **Tailwind CSS v4:** Config is CSS-only (no `tailwind.config.js`). Theme tokens live in `globals.css`, not a JS config file.
 
-## React Compiler
+---
 
-`reactCompiler: true` is set in `next.config.ts`, enabling the experimental React Compiler for automatic memoization.
+## Agents
+
+Four agents in `.claude/agents/`. Invoke the one matching your task:
+
+| Agent       | Use when…                                              |
+| ----------- | ------------------------------------------------------ |
+| `frontend`  | React, Next.js App Router, TypeScript, Tailwind code   |
+| `backend`   | Route Handlers, Server Actions, server-side TypeScript |
+| `design`    | Layouts, spacing, hierarchy, motion, accessibility     |
+| `portfolio` | Features, content, SEO, recruiter experience           |
+
+---
+
+## Skills
+
+Invoke with `/skill-name`. Grouped by the agent best suited for the task.
+
+### `frontend` — React, Next.js, TypeScript, Tailwind
+
+- `/superpowers:brainstorming` — explore requirements before building any component
+- `/frontend-design` — generate polished, distinctive UI; avoids generic AI aesthetics
+- `/feature-dev` — guided feature development with codebase understanding
+- `/superpowers:test-driven-development` — write tests before implementation code
+- `/simplify` — review changed code for quality and efficiency
+- `/superpowers:verification-before-completion` — run checks before claiming work is done
+
+### `backend` — Route Handlers, Server Actions, server-side TS
+
+- `/superpowers:brainstorming` — clarify requirements before writing server-side logic
+- `/claude-api` — scaffold Claude API / Anthropic SDK integrations
+- `/superpowers:systematic-debugging` — structured root-cause analysis before fixing
+- `/superpowers:test-driven-development` — write tests before implementation
+
+### `design` — Layouts, spacing, hierarchy, motion, accessibility
+
+- `/superpowers:brainstorming` — explore design direction and constraints first
+- `/frontend-design` — create distinctive interfaces with intentional aesthetics
+- `/simplify` — refine and tighten visual implementation after changes
+
+### `portfolio` — Features, content, SEO, recruiter experience
+
+- `/superpowers:brainstorming` — ideate features and content strategy
+- `/feature-dev` — plan and execute new portfolio sections end-to-end
+- `/claude-code-setup` — analyse repo and recommend Claude Code automations
+- `/claude-md-management:claude-md-improver` — audit and improve this CLAUDE.md
+
+### Workflow (any agent)
+
+- `/superpowers:writing-plans` — write an implementation plan before touching code
+- `/superpowers:executing-plans` — execute a written plan with review checkpoints
+- `/superpowers:dispatching-parallel-agents` — run 2+ independent tasks in parallel
+- `/superpowers:requesting-code-review` — verify work meets requirements before merging
+- `/superpowers:finishing-a-development-branch` — structured options when implementation is complete
