@@ -8,7 +8,6 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "prepare": "git config core.hooksPath .githooks",
     "review:frontend": "git add -N . && (git diff HEAD --quiet && echo 'No changes to review.' || git diff HEAD | claude --agent frontend -p \"Review this git diff including any new files. Focus on React/TypeScript/Tailwind: component patterns, hooks, types, performance, and accessibility.\")",
     "review:backend": "git add -N . && (git diff HEAD --quiet && echo 'No changes to review.' || git diff HEAD | claude --agent backend -p \"Review this git diff including any new files. Focus on Route Handlers, Server Actions, TypeScript, security, error handling, and caching.\")",
     "review:design": "git add -N . && (git diff HEAD --quiet && echo 'No changes to review.' || git diff HEAD | claude --agent design -p \"Review this git diff including any new files. Focus on layout, spacing, visual hierarchy, motion, and consistency with the existing design system.\")",

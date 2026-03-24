@@ -3,7 +3,7 @@
 ## Quick Start
 
 ```bash
-bun install   # install dependencies + register git hooks (run once after cloning)
+bun install   # install dependencies
 bun dev       # start development server
 ```
 
@@ -26,7 +26,7 @@ bun review:design       # during dev: layout, spacing, hierarchy, motion
 bun review:portfolio    # during dev: content quality, SEO, recruiter experience
 ```
 
-Pre-commit hook in `.githooks/pre-commit` runs `lint` + `typecheck` automatically on every commit. No environment variables required.
+No environment variables required.
 
 ## Architecture
 
