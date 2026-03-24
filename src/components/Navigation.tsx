@@ -67,15 +67,15 @@ export function Navigation() {
               >
                 <span
                   className={`block h-px transition-all duration-300 ${
-                    isActive ? "w-16 bg-[#e2e8f0]" : (
-                      "w-8 bg-[#8892b0] group-hover:w-16 group-hover:bg-[#e2e8f0]"
+                    isActive ? "w-16 bg-heading" : (
+                      "w-8 bg-foreground group-hover:w-16 group-hover:bg-heading"
                     )
                   }`}
                 />
                 <span
                   className={`text-xs tracking-widest uppercase transition-colors duration-300 ${
-                    isActive ? "text-[#e2e8f0]" : (
-                      "text-[#8892b0] group-hover:text-[#e2e8f0]"
+                    isActive ? "text-heading" : (
+                      "text-foreground group-hover:text-heading"
                     )
                   }`}
                 >

@@ -26,7 +26,7 @@ export function SocialLinks() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={label}
-            className="block text-[#8892b0] transition-colors duration-200 hover:text-[#64ffda]"
+            className="block text-foreground transition-colors duration-200 hover:text-accent"
           >
             <Icon size={24} />
           </Link>

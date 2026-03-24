@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo "Running pre-commit checks..."
+
+bun lint || { echo "Lint failed. Fix errors before committing."; exit 1; }
+bun typecheck || { echo "Type check failed. Fix errors before committing."; exit 1; }
+
+echo "Pre-commit checks passed."

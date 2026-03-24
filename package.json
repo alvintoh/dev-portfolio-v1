@@ -6,7 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "prepare": "git config core.hooksPath .githooks",
+    "review:frontend": "git add -N . && (git diff HEAD --quiet && echo 'No changes to review.' || git diff HEAD | claude --agent frontend -p \"Review this git diff including any new files. Focus on React/TypeScript/Tailwind: component patterns, hooks, types, performance, and accessibility.\")",
+    "review:backend": "git add -N . && (git diff HEAD --quiet && echo 'No changes to review.' || git diff HEAD | claude --agent backend -p \"Review this git diff including any new files. Focus on Route Handlers, Server Actions, TypeScript, security, error handling, and caching.\")",
+    "review:design": "git add -N . && (git diff HEAD --quiet && echo 'No changes to review.' || git diff HEAD | claude --agent design -p \"Review this git diff including any new files. Focus on layout, spacing, visual hierarchy, motion, and consistency with the existing design system.\")",
+    "review:portfolio": "git add -N . && (git diff HEAD --quiet && echo 'No changes to review.' || git diff HEAD | claude --agent portfolio -p \"Review this git diff including any new files for portfolio impact: content quality, SEO, recruiter experience, and section effectiveness.\")",
+    "review": "git add -N . && (git diff HEAD --quiet && echo 'No changes to review.' || git diff HEAD | claude -p \"Review this git diff including any new files. Cover all relevant domains: frontend code quality, visual design, and portfolio effectiveness. Flag any issues worth fixing before committing.\")"
   },
   "dependencies": {
     "lucide-react": "^0.577.0",

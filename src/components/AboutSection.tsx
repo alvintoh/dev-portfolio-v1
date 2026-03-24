@@ -1,87 +1,33 @@
-import { heroData } from "@/data/hero-data";
-import Link from "next/dist/client/link";
+import { aboutData } from "@/data/about-data";
 import Image from "next/image";
 
 export function AboutSection() {
-  const avatarFallback = heroData.name
-    .split(" ")
-    .map((n) => n[0])
-    .join("")
-    .toUpperCase();
-
   return (
     <section id="about" className="scroll-mt-24 lg:scroll-mt-0">
-      <h2 className="text-sm tracking-widest uppercase text-[#e2e8f0] mb-6 lg:hidden sticky top-0 bg-[#0a192f]/90 backdrop-blur-sm py-4 z-10">
+      <h2 className="text-sm tracking-widest uppercase text-heading mb-6 lg:hidden sticky top-0 bg-background/90 backdrop-blur-sm py-4 z-10">
         About
       </h2>
-      <div className="sm:flex sm:flex-row sm:gap-6 sm:mb-20 sm:justify-around sm:items-center">
-        <div className="hidden sm:block relative w-40 h-40 shrink-5 ring-2 ring-accent/30 rounded-full">
-          {heroData.avatar ?
+
+      <div className="sm:flex sm:flex-row sm:gap-6 sm:mb-20 sm:justify-around sm:items-center margin">
+        <div className="hidden sm:block relative w-40 h-40 shrink-0 ring-2 ring-accent/30 rounded-full">
+          {aboutData.avatarImage ?
             <Image
-              src={heroData.avatar}
-              alt={`Portrait of ${heroData.name}`}
+              src={aboutData.avatarImage}
+              alt={aboutData.avatarFallback}
               fill
               sizes="160px"
               className="rounded-full object-cover"
               priority
             />
           : <div className="w-full h-full rounded-full bg-heading flex items-center justify-center text-background font-bold text-3xl leading-none">
-              {avatarFallback}
+              {aboutData.avatarFallback}
             </div>
           }
         </div>
       </div>
-      <div className="flex flex-col gap-4 text-[#8892b0]">
-        <p>
-          Back in 2012, I decided to try my hand at creating custom Tumblr
-          themes and tumbled head first into the rabbit hole of coding and web
-          development. Fast-forward to today, and I&apos;ve had the privilege of
-          building software for an{" "}
-          <Link
-            href="#"
-            className="text-[#e2e8f0] hover:text-[#64ffda] transition-colors"
-          >
-            advertising agency
-          </Link>
-          , a{" "}
-          <Link
-            href="#"
-            className="text-[#e2e8f0] hover:text-[#64ffda] transition-colors"
-          >
-            start-up
-          </Link>
-          , a{" "}
-          <Link
-            href="#"
-            className="text-[#e2e8f0] hover:text-[#64ffda] transition-colors"
-          >
-            huge corporation
-          </Link>
-          , and a{" "}
-          <Link
-            href="#"
-            className="text-[#e2e8f0] hover:text-[#64ffda] transition-colors"
-          >
-            student-led design studio
-          </Link>
-          .
-        </p>
-        <p>
-          My main focus these days is building accessible, inclusive products
-          and digital experiences at{" "}
-          <a
-            href="#"
-            className="text-[#e2e8f0] hover:text-[#64ffda] transition-colors"
-          >
-            Acme Corp
-          </a>{" "}
-          for a variety of clients.
-        </p>
-        <p>
-          When I&apos;m not at the computer, I&apos;m usually rock climbing,
-          hanging out with my dog, or exploring local coffee shops and record
-          stores.
-        </p>
+
+      <div className="flex flex-col gap-6 text-foreground">
+        <p className="whitespace-pre-line">{aboutData.summary}</p>
       </div>
     </section>
   );

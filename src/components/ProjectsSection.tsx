@@ -53,7 +53,7 @@ const projects = [
 export function ProjectsSection() {
   return (
     <section id="projects" className="scroll-mt-24 lg:scroll-mt-0">
-      <h2 className="text-sm tracking-widest uppercase text-[#e2e8f0] mb-6 lg:hidden sticky top-0 bg-[#0a192f]/90 backdrop-blur-sm py-4 z-10">
+      <h2 className="text-sm tracking-widest uppercase text-heading mb-6 lg:hidden sticky top-0 bg-background/90 backdrop-blur-sm py-4 z-10">
         Projects
       </h2>
       <div className="flex flex-col gap-2">
@@ -63,9 +63,9 @@ export function ProjectsSection() {
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-4 sm:gap-6 p-4 -mx-4 rounded-lg transition-all duration-200 hover:bg-[#112240]/60 hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] hover:drop-shadow-lg"
+            className="group grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-4 sm:gap-6 p-4 -mx-4 rounded-lg transition-all duration-200 hover:bg-surface/60 hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] hover:drop-shadow-lg"
           >
-            <div className="overflow-hidden rounded border-2 border-[#233554] group-hover:border-[#64ffda]/30 transition-colors sm:mt-1 w-full sm:w-[120px] h-20 sm:h-[72px]">
+            <div className="overflow-hidden rounded border-2 border-[#233554] group-hover:border-accent/30 transition-colors sm:mt-1 w-full sm:w-[120px] h-20 sm:h-[72px]">
               <ImageWithFallback
                 src={project.image}
                 alt={project.title}
@@ -73,14 +73,14 @@ export function ProjectsSection() {
               />
             </div>
             <div>
-              <h3 className="text-[#e2e8f0] group-hover:text-[#64ffda] transition-colors flex items-center gap-1">
+              <h3 className="text-heading group-hover:text-accent transition-colors flex items-center gap-1">
                 {project.title}
                 <ArrowUpRight
                   size={16}
                   className="inline-block transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                 />
               </h3>
-              <p className="text-sm text-[#8892b0] mt-2">
+              <p className="text-sm text-foreground mt-2">
                 {project.description}
               </p>
               <div className="flex items-center gap-4 mt-3">
@@ -88,14 +88,14 @@ export function ProjectsSection() {
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-full bg-[#64ffda]/10 text-[#64ffda] px-3 py-1 text-xs"
+                      className="rounded-full bg-accent/10 text-accent px-3 py-1 text-xs"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
               </div>
-              <div className="flex items-center gap-4 mt-3 text-xs text-[#8892b0]">
+              <div className="flex items-center gap-4 mt-3 text-xs text-foreground">
                 <span className="flex items-center gap-1">
                   <Star size={14} /> {project.stars}
                 </span>
@@ -109,7 +109,7 @@ export function ProjectsSection() {
       </div>
       <Link
         href="#"
-        className="inline-flex items-center gap-1 mt-8 text-[#e2e8f0] hover:text-[#64ffda] transition-colors group"
+        className="inline-flex items-center gap-1 mt-8 text-heading hover:text-accent transition-colors group"
       >
         View Full Project Archive
         <ArrowUpRight

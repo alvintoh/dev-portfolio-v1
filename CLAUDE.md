@@ -1,18 +1,32 @@
 # CLAUDE.md
 
-Guidance for Claude Code when working in this repository.
+## Quick Start
+
+```bash
+bun install   # install dependencies + register git hooks (run once after cloning)
+bun dev       # start development server
+```
 
 ## Commands
 
 ```bash
-bun dev        # Start development server
-bun build      # Production build
-bun start      # Start production server
-bun lint       # Run ESLint
-bun typecheck  # Type-check without emitting (tsc --noEmit)
+bun build      # production build
+bun start      # start production server
+bun lint       # run ESLint
+bun typecheck  # type-check without emitting (tsc --noEmit)
 ```
 
-**No environment variables required.**
+**Code review (agent-driven, git-changed + new files):**
+
+```bash
+bun review              # pre-commit: full review across all domains
+bun review:frontend     # during dev: React/TypeScript/Tailwind focus
+bun review:backend      # during dev: Route Handlers, Server Actions, security
+bun review:design       # during dev: layout, spacing, hierarchy, motion
+bun review:portfolio    # during dev: content quality, SEO, recruiter experience
+```
+
+Pre-commit hook in `.githooks/pre-commit` runs `lint` + `typecheck` automatically on every commit. No environment variables required.
 
 ## Architecture
 
@@ -21,19 +35,15 @@ Single-page Next.js 16 portfolio using App Router. All content renders on `src/a
 **Layout:** Fixed left sidebar (hero + nav + social links) on desktop; stacks vertically on mobile.
 
 **Styling:** Tailwind CSS v4 via PostCSS. Theme tokens in `src/app/globals.css`:
-
 - `--background: #0a192f` · `--foreground: #8892b0` · `--accent: #64ffda`
 
 **Path alias:** `@/*` → `./src/*`
 
-## Content & Data
+## Content, Data & Key Components
 
 - `src/data/hero-data.ts` — hero section (name, title, bio, avatar)
 - Inline arrays in `ExperienceSection.tsx` and `ProjectsSection.tsx` — experience and project cards
 - Static images → `public/images/`
-
-## Key Components
-
 - `Navigation.tsx` — `IntersectionObserver` for active section highlight
 - `MouseGlow.tsx` — cursor ambient glow (desktop only)
 - `figma/ImageWithFallback.tsx` — `<Image>` wrapper with error fallback
@@ -65,37 +75,44 @@ Invoke with `/skill-name`. Grouped by the agent best suited for the task.
 
 ### `frontend` — React, Next.js, TypeScript, Tailwind
 
-- `/superpowers:brainstorming` — explore requirements before building any component
-- `/frontend-design` — generate polished, distinctive UI; avoids generic AI aesthetics
+- `/superpowers:brainstorming` — explore requirements before building
+- `/frontend-design` — polished, distinctive UI; avoids generic AI aesthetics
 - `/feature-dev` — guided feature development with codebase understanding
-- `/superpowers:test-driven-development` — write tests before implementation code
+- `/superpowers:test-driven-development` — write tests before implementation
 - `/simplify` — review changed code for quality and efficiency
-- `/superpowers:verification-before-completion` — run checks before claiming work is done
+- `/superpowers:verification-before-completion` — run checks before claiming done
 
 ### `backend` — Route Handlers, Server Actions, server-side TS
 
-- `/superpowers:brainstorming` — clarify requirements before writing server-side logic
 - `/claude-api` — scaffold Claude API / Anthropic SDK integrations
 - `/superpowers:systematic-debugging` — structured root-cause analysis before fixing
 - `/superpowers:test-driven-development` — write tests before implementation
 
 ### `design` — Layouts, spacing, hierarchy, motion, accessibility
 
-- `/superpowers:brainstorming` — explore design direction and constraints first
 - `/frontend-design` — create distinctive interfaces with intentional aesthetics
 - `/simplify` — refine and tighten visual implementation after changes
 
 ### `portfolio` — Features, content, SEO, recruiter experience
 
-- `/superpowers:brainstorming` — ideate features and content strategy
 - `/feature-dev` — plan and execute new portfolio sections end-to-end
 - `/claude-code-setup` — analyse repo and recommend Claude Code automations
 - `/claude-md-management:claude-md-improver` — audit and improve this CLAUDE.md
 
 ### Workflow (any agent)
 
-- `/superpowers:writing-plans` — write an implementation plan before touching code
-- `/superpowers:executing-plans` — execute a written plan with review checkpoints
-- `/superpowers:dispatching-parallel-agents` — run 2+ independent tasks in parallel
-- `/superpowers:requesting-code-review` — verify work meets requirements before merging
-- `/superpowers:finishing-a-development-branch` — structured options when implementation is complete
+Scale steps to task size — not all are required:
+
+- **Tiny** (typo, tweak): just do it
+- **Small** (update a section): execute → verify → commit
+- **Medium** (new component): brainstorm → plan → execute → verify → commit
+- **Large** (major feature): all steps in order
+
+1. `/superpowers:brainstorming` — explore intent and requirements first
+2. `/superpowers:writing-plans` — write an implementation plan before touching code
+3. `/superpowers:executing-plans` — execute the plan with review checkpoints
+4. `/superpowers:verification-before-completion` — run checks before claiming done
+5. `/superpowers:requesting-code-review` — verify work meets requirements before merging
+6. `/superpowers:finishing-a-development-branch` — wrap up when implementation is complete
+
+For independent parallel tasks at any stage: `/superpowers:dispatching-parallel-agents`

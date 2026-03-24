@@ -18,7 +18,7 @@ export default function Home() {
           {/* Left Sidebar - Fixed on desktop */}
           <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[48%] lg:flex-col lg:py-24">
             <HeroSection />
-            <div className="mt-8 lg:mt-10">
+            <div className="mt-8 lg:mt-12">
               <Navigation />
             </div>
             <div className="mt-8 lg:mt-auto">
@@ -28,7 +28,7 @@ export default function Home() {
 
           {/* Right Content - Scrollable */}
           <main className="pt-16 lg:w-[52%] lg:py-24">
-            <div className="flex flex-col gap-24 lg:gap-36">
+            <div className="flex flex-col gap-16 lg:gap-24">
               <AboutSection />
               <ExperienceSection />
               <ProjectsSection />
