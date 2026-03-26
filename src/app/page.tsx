@@ -1,7 +1,6 @@
-import Link from "next/link";
-
 import { AboutSection } from "@/components/AboutSection";
-import { ExperienceSection } from "@/components/ExperienceSection";
+import { ExperiencesSection } from "@/components/ExperienceSection";
+import { Footer } from "@/components/Footer";
 import { HeroSection } from "@/components/HeroSection";
 import { Navigation } from "@/components/Navigation";
 import { ProjectsSection } from "@/components/ProjectsSection";
@@ -28,63 +27,13 @@ export default function Home() {
 
           {/* Right Content - Scrollable */}
           <main className="pt-16 lg:w-[52%] lg:py-24">
-            <div className="flex flex-col gap-16 lg:gap-24">
+            <div className="flex flex-col gap-12 lg:gap-12">
               <AboutSection />
-              <ExperienceSection />
+              <ExperiencesSection />
               <ProjectsSection />
             </div>
 
-            {/* Footer */}
-            <footer className="mt-24 pb-12 text-sm text-foreground">
-              <p>
-                Loosely designed in{" "}
-                <Link
-                  href="https://www.figma.com/"
-                  className="text-heading hover:text-accent transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Figma
-                </Link>{" "}
-                and coded in{" "}
-                <Link
-                  href="https://code.visualstudio.com/"
-                  className="text-heading hover:text-accent transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Visual Studio Code
-                </Link>
-                . Built with{" "}
-                <Link
-                  href="https://react.dev/"
-                  className="text-heading hover:text-accent transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  React
-                </Link>{" "}
-                and{" "}
-                <Link
-                  href="https://tailwindcss.com/"
-                  className="text-heading hover:text-accent transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Tailwind CSS
-                </Link>
-                , deployed with{" "}
-                <Link
-                  href="https://vercel.com/"
-                  className="text-heading hover:text-accent transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Vercel
-                </Link>
-                .
-              </p>
-            </footer>
+            <Footer />
           </main>
         </div>
       </div>

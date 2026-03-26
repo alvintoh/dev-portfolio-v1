@@ -1,25 +1,11 @@
 import Link from "next/link";
 
-import {
-  FaEnvelope,
-  FaGithub,
-  FaInstagram,
-  FaLinkedin,
-  FaTwitter,
-} from "react-icons/fa";
-
-const socials = [
-  { icon: FaGithub, href: "https://github.com", label: "GitHub" },
-  { icon: FaLinkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: FaTwitter, href: "https://twitter.com", label: "Twitter" },
-  { icon: FaInstagram, href: "https://instagram.com", label: "Instagram" },
-  { icon: FaEnvelope, href: "mailto:hello@example.com", label: "Email" },
-];
+import { socialData } from "@/data/social-links-data";
 
 export function SocialLinks() {
   return (
     <ul className="flex items-center gap-5">
-      {socials.map(({ icon: Icon, href, label }) => (
+      {socialData.map(({ icon: Icon, href, label }) => (
         <li key={label}>
           <Link
             href={href}
