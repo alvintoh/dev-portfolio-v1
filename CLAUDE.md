@@ -16,15 +16,7 @@ bun lint       # run ESLint
 bun typecheck  # type-check without emitting (tsc --noEmit)
 ```
 
-**Code review (agent-driven, git-changed + new files):**
-
-```bash
-bun review              # pre-commit: full review across all domains
-bun review:frontend     # during dev: React/TypeScript/Tailwind focus
-bun review:backend      # during dev: Route Handlers, Server Actions, security
-bun review:design       # during dev: layout, spacing, hierarchy, motion
-bun review:portfolio    # during dev: content quality, SEO, recruiter experience
-```
+**Code review:** Ask Claude directly — "review `ComponentName.tsx` for design issues" — no commands needed.
 
 No environment variables required.
 
@@ -42,7 +34,9 @@ Single-page Next.js 16 portfolio using App Router. All content renders on `src/a
 ## Content, Data & Key Components
 
 - `src/data/hero-data.ts` — hero section (name, title, bio, avatar)
-- Inline arrays in `ExperienceSection.tsx` and `ProjectsSection.tsx` — experience and project cards
+- `src/data/experience-data.ts` — experience cards
+- `src/data/project-data.ts` — project cards
+- `src/data/social-links-data.ts` — social links (GitHub, LinkedIn, YouTube, Email)
 - Static images → `public/images/`
 - `Navigation.tsx` — `IntersectionObserver` for active section highlight
 - `MouseGlow.tsx` — cursor ambient glow (desktop only)
