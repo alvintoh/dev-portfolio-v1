@@ -6,7 +6,7 @@ export function Footer() {
       <p>
         Inspired by{" "}
         <Link
-          href="https://github.com/bchiang7/"
+          href="https://github.com/bchiang7"
           className="text-heading hover:text-accent transition-colors"
           target="_blank"
           rel="noopener noreferrer"
@@ -15,7 +15,7 @@ export function Footer() {
         </Link>{" "}
         portfolio website. Designed in{" "}
         <Link
-          href="https://www.figma.com/"
+          href="https://www.figma.com"
           className="text-heading hover:text-accent transition-colors"
           target="_blank"
           rel="noopener noreferrer"
@@ -24,7 +24,7 @@ export function Footer() {
         </Link>{" "}
         and coded in{" "}
         <Link
-          href="https://code.visualstudio.com/"
+          href="https://code.visualstudio.com"
           className="text-heading hover:text-accent transition-colors"
           target="_blank"
           rel="noopener noreferrer"
@@ -33,7 +33,7 @@ export function Footer() {
         </Link>
         . Built with{" "}
         <Link
-          href="https://nextjs.org/"
+          href="https://nextjs.org"
           className="text-heading hover:text-accent transition-colors"
           target="_blank"
           rel="noopener noreferrer"
@@ -42,7 +42,7 @@ export function Footer() {
         </Link>{" "}
         and{" "}
         <Link
-          href="https://tailwindcss.com/"
+          href="https://tailwindcss.com"
           className="text-heading hover:text-accent transition-colors"
           target="_blank"
           rel="noopener noreferrer"
@@ -51,7 +51,7 @@ export function Footer() {
         </Link>
         , deployed with{" "}
         <Link
-          href="https://vercel.com/"
+          href="https://vercel.com"
           className="text-heading hover:text-accent transition-colors"
           target="_blank"
           rel="noopener noreferrer"

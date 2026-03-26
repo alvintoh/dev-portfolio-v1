@@ -15,7 +15,7 @@ export const projectData: Project[] = [
       "A full-stack messaging platform inspired by Slack, built for private and workplace communication. Create and join multi-channel workspaces, collaborate in real time, and sign in securely with Google or GitHub via OAuth 2.0.",
     image: "/images/projects/slack-clone.jpg",
     technologies: ["Next.js", "React", "Tailwind CSS", "Convex", "Vercel"],
-    websiteUrl: "https://nextjs-slackgo.vercel.app/",
+    websiteUrl: "https://nextjs-slackgo.vercel.app",
   },
   {
     title: "AI Note-Taking App",
@@ -32,6 +32,6 @@ export const projectData: Project[] = [
       "Firebase",
       "Vercel",
     ],
-    websiteUrl: "https://nextjs-notego.vercel.app/",
+    websiteUrl: "https://nextjs-notego.vercel.app",
   },
 ];

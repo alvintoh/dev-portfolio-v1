@@ -24,7 +24,7 @@ export const experienceData: Experience[] = [
     title: "Senior Software Engineer",
     company: "Univers",
     location: "Singapore",
-    companyUrl: "https://univers.com/",
+    companyUrl: "https://univers.com",
     description:
       "Developed AIoT platforms including Singapore's first Virtual Power Plant and Battery Storage System, integrating new energy systems for B2B clients while building carbon credit portals, fault detection systems, and ETL pipelines to optimize data processing across the product.",
     technologies: [
