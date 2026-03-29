@@ -37,10 +37,10 @@ export function ExperiencesSection() {
               </h3>
               <p className="text-sm text-foreground mt-2">{exp.description}</p>
               <div className="flex flex-wrap gap-2 mt-3">
-                {exp.technologies.map((tech) => (
+                {exp.stack.map((tech) => (
                   <span
                     key={tech}
-                    className="rounded-full bg-accent/10 text-accent px-3 py-1 text-xs"
+                    className="rounded-full bg-accent/10 text-accent px-3 font-medium py-1 text-xs"
                   >
                     {tech}
                   </span>

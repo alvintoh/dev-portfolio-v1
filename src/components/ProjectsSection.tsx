@@ -40,10 +40,10 @@ export function ProjectsSection() {
               </p>
               <div className="flex items-center gap-4 mt-3">
                 <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
+                  {project.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-full bg-accent/10 text-accent px-3 py-1 text-xs"
+                      className="rounded-full bg-accent/10 text-accent font-medium px-3 py-1 text-xs"
                     >
                       {tech}
                     </span>
@@ -51,12 +51,16 @@ export function ProjectsSection() {
                 </div>
               </div>
               <div className="flex items-center gap-4 mt-3 text-xs text-foreground">
-                <span className="flex items-center gap-1">
-                  <Star size={14} /> {project.stars}
-                </span>
-                <span className="flex items-center gap-1">
-                  <GitFork size={14} /> {project.forks}
-                </span>
+                {project.stars && (
+                  <span className="flex items-center gap-1">
+                    <Star size={14} /> {project.stars}
+                  </span>
+                )}
+                {project.forks && (
+                  <span className="flex items-center gap-1">
+                    <GitFork size={14} /> {project.forks}
+                  </span>
+                )}
               </div>
             </div>
           </Link>

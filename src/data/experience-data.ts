@@ -5,7 +5,7 @@ type Experience = {
   location?: string;
   companyUrl: string;
   description: string;
-  technologies: string[];
+  stack: string[];
 };
 
 export const experienceData: Experience[] = [
@@ -16,8 +16,17 @@ export const experienceData: Experience[] = [
     location: "Sydney, Australia",
     companyUrl: "https://sofico.global/en/",
     description:
-      "Designed and developed core ERP modules for a fleet management platform, integrating APIs with major automotive clients and improving PR merge workflows through GitHub automation and CI/CD pipelines.",
-    technologies: ["Jakarta EE", "JUnit", "GitHub Actions", "Podman", "JBoss"],
+      "Designed and developed core ERP modules for a fleet management platform, implementing high-scale API integrations with major automotive clients and optimizing PR workflows by migrating legacy processes to GitHub Actions with automated CI/CD quality gates.",
+    stack: [
+      "Java 17",
+      "Jakarta EE",
+      "JBoss",
+      "GitHub Actions",
+      "PostgreSQL",
+      "OpenAPI",
+      "Podman",
+      "JUnit",
+    ],
   },
   {
     period: "2020 — 2024",
@@ -27,16 +36,16 @@ export const experienceData: Experience[] = [
     companyUrl: "https://univers.com",
     description:
       "Developed AIoT platforms including Singapore's first Virtual Power Plant and Battery Storage System, integrating new energy systems for B2B clients while building carbon credit portals, fault detection systems, and ETL pipelines to optimize data processing across the product.",
-    technologies: [
+    stack: [
+      "Java 17",
+      "Python",
       "Spring Boot",
       "FastAPI",
-      "Docker",
       "Kafka",
-      "MyBatis",
-      "Liquibase",
-      "Feign",
-      "Redis",
       "ClickHouse",
+      "Redis",
+      "PostgreSQL",
+      "PowerJob",
     ],
   },
 ];
