@@ -14,26 +14,14 @@ bun lint
 bun typecheck
 ```
 
-## Step 2 — Read all component files
+## Step 2 — Discover and read all component files
 
-Read every file in `src/app/`:
-- `src/app/page.tsx`
-- `src/app/layout.tsx`
-- `src/app/AboutSection.tsx`
-- `src/app/ExperiencesSection.tsx`
-- `src/app/Footer.tsx`
-- `src/app/HeroSection.tsx`
-- `src/app/MouseGlow.tsx`
-- `src/app/Navigation.tsx`
-- `src/app/ProjectsSection.tsx`
-- `src/app/SocialLinks.tsx`
-- `src/app/figma/ImageWithFallback.tsx`
+Use Glob to discover files rather than relying on a fixed list:
+- Pattern `src/components/**/*.tsx` — all components
+- Pattern `src/app/page.tsx` and `src/app/layout.tsx` — app entry points
+- Pattern `src/data/*.ts` — all data files
 
-Also read any data files referenced:
-- `src/data/hero-data.ts`
-- `src/data/experience-data.ts`
-- `src/data/project-data.ts`
-- `src/data/social-links-data.ts`
+Read every file returned by these globs.
 
 ## Step 3 — Review against these criteria
 
