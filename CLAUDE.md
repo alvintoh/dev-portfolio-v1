@@ -69,6 +69,7 @@ Invoke with `/skill-name`. Grouped by the agent best suited for the task.
 
 ### `frontend` — React, Next.js, TypeScript, Tailwind
 
+- `/review-fe` — run lint + typecheck, then review all components for TypeScript, React, Next.js, performance, a11y, and security issues
 - `/superpowers:brainstorming` — explore requirements before building
 - `/frontend-design` — polished, distinctive UI; avoids generic AI aesthetics
 - `/feature-dev` — guided feature development with codebase understanding
@@ -84,6 +85,7 @@ Invoke with `/skill-name`. Grouped by the agent best suited for the task.
 
 ### `design` — Layouts, spacing, hierarchy, motion, accessibility
 
+- `/review-design` — review all components for spacing, visual hierarchy, typography, colour, responsive design, motion, and accessibility
 - `/frontend-design` — create distinctive interfaces with intentional aesthetics
 - `/simplify` — refine and tighten visual implementation after changes
 
