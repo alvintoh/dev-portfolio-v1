@@ -88,6 +88,7 @@ Think from three angles: a **recruiter** scanning in under 60 seconds, a **senio
 
 - All copy (bio, experience, projects) should live in `src/data/` files — never buried in component JSX
 - Adding a new project should require editing one data file only
+- If structure or ownership is unclear, run `/arch-diagram` first to map folders, component boundaries, and data flow before recommending changes
 - Set up Vercel preview deployments — review on a real URL before merging
 - Add a CI workflow running `bun lint` and `tsc --noEmit` on every push
 - Write a brief README for the repo — it appears on GitHub and signals good habits
@@ -95,6 +96,7 @@ Think from three angles: a **recruiter** scanning in under 60 seconds, a **senio
 ---
 
 ## Return format
+
 1. Improvements ranked by recruiter/hiring impression value
 2. Label each: **Quick win** / **Medium effort** / **Larger project**
 3. Brief explanation of why it matters

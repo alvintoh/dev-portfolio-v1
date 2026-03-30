@@ -27,6 +27,7 @@ Single-page Next.js 16 portfolio using App Router. All content renders on `src/a
 **Layout:** Fixed left sidebar (hero + nav + social links) on desktop; stacks vertically on mobile.
 
 **Styling:** Tailwind CSS v4 via PostCSS. Theme tokens in `src/app/globals.css`:
+
 - `--background: #0a192f` · `--foreground: #8892b0` · `--accent: #64ffda`
 
 **Path alias:** `@/*` → `./src/*`
@@ -52,20 +53,30 @@ Single-page Next.js 16 portfolio using App Router. All content renders on `src/a
 
 ## Agents
 
-Four agents in `.claude/agents/`. Invoke the one matching your task:
+Five agents in `.claude/agents/`. Invoke the one matching your task:
 
-| Agent       | Use when…                                              |
-| ----------- | ------------------------------------------------------ |
-| `frontend`  | React, Next.js App Router, TypeScript, Tailwind code   |
-| `backend`   | Route Handlers, Server Actions, server-side TypeScript |
-| `design`    | Layouts, spacing, hierarchy, motion, accessibility     |
-| `portfolio` | Features, content, SEO, recruiter experience           |
+| Agent          | Use when…                                              |
+| -------------- | ------------------------------------------------------ |
+| `architecture` | Repository structure, boundaries, data flow, diagrams  |
+| `frontend`     | React, Next.js App Router, TypeScript, Tailwind code   |
+| `backend`      | Route Handlers, Server Actions, server-side TypeScript |
+| `design`       | Layouts, spacing, hierarchy, motion, accessibility     |
+| `portfolio`    | Features, content, SEO, recruiter experience           |
 
 ---
 
 ## Skills
 
 Invoke with `/skill-name`. Grouped by the agent best suited for the task.
+
+### `architecture` — Repository structure, boundaries, and diagrams
+
+- `/arch-diagram` — generate Excalidraw diagrams of repository structure, data flow, and system architecture
+- `/superpowers:brainstorming` — explore architectural constraints and trade-offs before proposing structure changes
+- `/superpowers:writing-plans` — draft a stepwise architecture refactor or re-organization plan before implementation
+- `/superpowers:executing-plans` — execute architecture changes with checkpoints and boundary validation
+- `/superpowers:verification-before-completion` — verify architecture changes with lint/typecheck/tests before declaring done
+- `/simplify` — tighten folder/module structure and reduce unnecessary complexity after changes
 
 ### `frontend` — React, Next.js, TypeScript, Tailwind
 
