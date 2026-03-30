@@ -1,5 +1,5 @@
 import { AboutSection } from "@/components/AboutSection";
-import { ExperiencesSection } from "@/components/ExperienceSection";
+import { ExperiencesSection } from "@/components/ExperiencesSection";
 import { Footer } from "@/components/Footer";
 import { HeroSection } from "@/components/HeroSection";
 import { Navigation } from "@/components/Navigation";
