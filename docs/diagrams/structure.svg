@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 992 468" width="992" height="468">
+<defs><marker id="ah" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#555"/></marker></defs>
+<rect width="992" height="468" fill="#ffffff"/>
+<rect x="28" y="68" width="730" height="265" rx="8" fill="#dbe4ff" fill-opacity="0.25" stroke="#1c7ed6" stroke-width="1.5"/>
+<rect x="283" y="98" width="218" height="215" rx="8" fill="#a5d8ff" fill-opacity="1" stroke="#339af0" stroke-width="1.5"/>
+<rect x="714" y="68" width="250" height="175" rx="8" fill="#d0bfff" fill-opacity="1" stroke="#7048e8" stroke-width="1.5"/>
+<rect x="523" y="98" width="218" height="140" rx="8" fill="#c3fae8" fill-opacity="1" stroke="#0ca678" stroke-width="1.5"/>
+<rect x="46" y="98" width="215" height="122" rx="8" fill="#e9ecef" fill-opacity="1" stroke="#495057" stroke-width="1.5"/>
+<rect x="28" y="350" width="250" height="90" rx="8" fill="#fff3bf" fill-opacity="1" stroke="#f08c00" stroke-width="1.5"/>
+<rect x="298" y="350" width="188" height="90" rx="8" fill="#ffd8a8" fill-opacity="1" stroke="#e67700" stroke-width="1.5"/>
+<rect x="506" y="350" width="188" height="90" rx="8" fill="#c3fae8" fill-opacity="1" stroke="#0ca678" stroke-width="1.5"/>
+<text text-anchor="middle" fill="#1e1e2e" font-size="20" font-family="system-ui,sans-serif">
+  <tspan x="508" y="48">dev-portfolio-v1  ·  Folder Structure</tspan>
+</text>
+<text text-anchor="middle" fill="#1971c2" font-size="14" font-family="system-ui,sans-serif">
+  <tspan x="148" y="91">Source Code  ·  src/</tspan>
+</text>
+<text text-anchor="middle" fill="#212529" font-size="14" font-family="system-ui,sans-serif">
+  <tspan x="153.5" y="124">src/app/</tspan>
+</text>
+<text text-anchor="middle" fill="#555" font-size="13" font-family="system-ui,sans-serif">
+  <tspan x="153.5" y="147">page.tsx</tspan>
+  <tspan x="153.5" dy="18.85">layout.tsx</tspan>
+  <tspan x="153.5" dy="18.85">globals.css</tspan>
+  <tspan x="153.5" dy="18.85">favicon.ico</tspan>
+</text>
+<text text-anchor="middle" fill="#1971c2" font-size="14" font-family="system-ui,sans-serif">
+  <tspan x="392" y="124">src/components/</tspan>
+</text>
+<text text-anchor="middle" fill="#333" font-size="13" font-family="system-ui,sans-serif">
+  <tspan x="392" y="147">AboutSection.tsx</tspan>
+  <tspan x="392" dy="18.85">ExperiencesSection.tsx</tspan>
+  <tspan x="392" dy="18.85">Footer.tsx</tspan>
+  <tspan x="392" dy="18.85">HeroSection.tsx</tspan>
+  <tspan x="392" dy="18.85">MouseGlow.tsx</tspan>
+  <tspan x="392" dy="18.85">Navigation.tsx</tspan>
+  <tspan x="392" dy="18.85">ProjectsSection.tsx</tspan>
+  <tspan x="392" dy="18.85">SocialLinks.tsx</tspan>
+  <tspan x="392" dy="18.85">figma/</tspan>
+</text>
+<text text-anchor="middle" fill="#0a7c5c" font-size="14" font-family="system-ui,sans-serif">
+  <tspan x="632" y="124">src/data/</tspan>
+</text>
+<text text-anchor="middle" fill="#333" font-size="13" font-family="system-ui,sans-serif">
+  <tspan x="632" y="147">hero-data.ts</tspan>
+  <tspan x="632" dy="18.85">experience-data.ts</tspan>
+  <tspan x="632" dy="18.85">project-data.ts</tspan>
+  <tspan x="632" dy="18.85">social-links-data.ts</tspan>
+  <tspan x="632" dy="18.85">about-data.ts</tspan>
+</text>
+<text text-anchor="middle" fill="#7c5e10" font-size="14" font-family="system-ui,sans-serif">
+  <tspan x="153" y="376">Config Files</tspan>
+</text>
+<text text-anchor="middle" fill="#555" font-size="13" font-family="system-ui,sans-serif">
+  <tspan x="153" y="399">package.json · next.config.ts</tspan>
+  <tspan x="153" dy="18.85">tsconfig.json · eslint.config.mjs</tspan>
+</text>
+<text text-anchor="middle" fill="#b05f00" font-size="14" font-family="system-ui,sans-serif">
+  <tspan x="392" y="376">public/</tspan>
+</text>
+<text text-anchor="middle" fill="#555" font-size="13" font-family="system-ui,sans-serif">
+  <tspan x="392" y="399">images/hero/</tspan>
+  <tspan x="392" dy="18.85">images/projects/</tspan>
+</text>
+<text text-anchor="middle" fill="#0a7c5c" font-size="14" font-family="system-ui,sans-serif">
+  <tspan x="600" y="376">docs/diagrams/</tspan>
+</text>
+<text text-anchor="middle" fill="#555" font-size="13" font-family="system-ui,sans-serif">
+  <tspan x="600" y="399">*.excalidraw  ·  *.svg</tspan>
+</text>
+<text text-anchor="middle" fill="#4a2fa0" font-size="14" font-family="system-ui,sans-serif">
+  <tspan x="839" y="94">.claude/</tspan>
+</text>
+<text text-anchor="middle" fill="#333" font-size="13" font-family="system-ui,sans-serif">
+  <tspan x="839" y="117">agents/</tspan>
+  <tspan x="839" dy="18.85">architect · backend</tspan>
+  <tspan x="839" dy="18.85">design · frontend</tspan>
+  <tspan x="839" dy="18.85">portfolio</tspan>
+  <tspan x="839" dy="18.85">skills/</tspan>
+  <tspan x="839" dy="18.85">arch-diagram · review-fe</tspan>
+  <tspan x="839" dy="18.85">review-design</tspan>
+</text>
+</svg>

@@ -6,7 +6,7 @@ import Link from "next/link";
 export function AboutSection() {
   return (
     <section id="about" className="scroll-mt-24 lg:scroll-mt-0">
-      <h2 className="text-sm tracking-widest uppercase text-heading mb-6 lg:hidden sticky top-0 bg-background/90 backdrop-blur-sm py-4 z-10">
+      <h2 className="text-md tracking-widest uppercase text-heading lg:hidden sticky top-0 bg-background/90 backdrop-blur-sm py-4 z-10">
         About
       </h2>
 

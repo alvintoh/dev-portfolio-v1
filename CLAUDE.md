@@ -57,7 +57,7 @@ Five agents in `.claude/agents/`. Invoke the one matching your task:
 
 | Agent          | Use when…                                              |
 | -------------- | ------------------------------------------------------ |
-| `architecture` | Repository structure, boundaries, data flow, diagrams  |
+| `architect`    | Repository structure, boundaries, data flow, diagrams  |
 | `frontend`     | React, Next.js App Router, TypeScript, Tailwind code   |
 | `backend`      | Route Handlers, Server Actions, server-side TypeScript |
 | `design`       | Layouts, spacing, hierarchy, motion, accessibility     |
@@ -69,7 +69,7 @@ Five agents in `.claude/agents/`. Invoke the one matching your task:
 
 Invoke with `/skill-name`. Grouped by the agent best suited for the task.
 
-### `architecture` — Repository structure, boundaries, and diagrams
+### `architect` — Repository structure, boundaries, and diagrams
 
 - `/arch-diagram` — generate Excalidraw diagrams of repository structure, data flow, and system architecture
 - `/superpowers:brainstorming` — explore architectural constraints and trade-offs before proposing structure changes

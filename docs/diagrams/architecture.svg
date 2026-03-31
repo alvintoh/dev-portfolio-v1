@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 806 628" width="806" height="628">
+<defs><marker id="ah" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#555"/></marker></defs>
+<rect width="806" height="628" fill="#ffffff"/>
+<rect x="28" y="218" width="750" height="280" rx="8" fill="#dbe4ff" fill-opacity="0.2" stroke="#1c7ed6" stroke-width="1.5"/>
+<rect x="316" y="253" width="442" height="225" rx="8" fill="#a5d8ff" fill-opacity="0.5" stroke="#1c7ed6" stroke-width="1.5"/>
+<rect x="28" y="72" width="750" height="130" rx="8" fill="#ffd8a8" fill-opacity="0.3" stroke="#e67700" stroke-width="1.5"/>
+<rect x="28" y="518" width="750" height="82" rx="8" fill="#c3fae8" fill-opacity="1" stroke="#0ca678" stroke-width="1.5"/>
+<rect x="46" y="253" width="252" height="225" rx="8" fill="#74c0fc" fill-opacity="0.6" stroke="#1c7ed6" stroke-width="1.5"/>
+<rect x="46" y="102" width="188" height="82" rx="8" fill="#e9ecef" fill-opacity="1" stroke="#495057" stroke-width="1.5"/>
+<rect x="248" y="102" width="175" height="82" rx="8" fill="#a5d8ff" fill-opacity="1" stroke="#339af0" stroke-width="1.5"/>
+<rect x="436" y="102" width="175" height="82" rx="8" fill="#d0bfff" fill-opacity="1" stroke="#7048e8" stroke-width="1.5"/>
+<rect x="624" y="102" width="132" height="82" rx="8" fill="#c3fae8" fill-opacity="1" stroke="#0ca678" stroke-width="1.5"/>
+<text text-anchor="middle" fill="#1e1e2e" font-size="22" font-family="system-ui,sans-serif">
+  <tspan x="388" y="50">System Architecture</tspan>
+</text>
+<text text-anchor="middle" fill="#e67700" font-size="14" font-family="system-ui,sans-serif">
+  <tspan x="128" y="95">Browser Runtime</tspan>
+</text>
+<text text-anchor="middle" fill="#222" font-size="14" font-family="system-ui,sans-serif">
+  <tspan x="140" y="127">Next.js 16</tspan>
+</text>
+<text text-anchor="middle" fill="#555" font-size="12" font-family="system-ui,sans-serif">
+  <tspan x="140" y="150">App Router</tspan>
+  <tspan x="140" dy="17.4">React Compiler</tspan>
+</text>
+<text text-anchor="middle" fill="#1971c2" font-size="14" font-family="system-ui,sans-serif">
+  <tspan x="335.5" y="127">React 19</tspan>
+</text>
+<text text-anchor="middle" fill="#555" font-size="12" font-family="system-ui,sans-serif">
+  <tspan x="335.5" y="150">&quot;use client&quot;</tspan>
+  <tspan x="335.5" dy="17.4">useState · useEffect</tspan>
+</text>
+<text text-anchor="middle" fill="#4a2fa0" font-size="14" font-family="system-ui,sans-serif">
+  <tspan x="523.5" y="127">Theme System</tspan>
+</text>
+<text text-anchor="middle" fill="#555" font-size="12" font-family="system-ui,sans-serif">
+  <tspan x="523.5" y="150">dark / light</tspan>
+  <tspan x="523.5" dy="17.4">localStorage</tspan>
+</text>
+<text text-anchor="middle" fill="#0a7c5c" font-size="13" font-family="system-ui,sans-serif">
+  <tspan x="690" y="126">Tailwind CSS v4</tspan>
+</text>
+<text text-anchor="middle" fill="#555" font-size="12" font-family="system-ui,sans-serif">
+  <tspan x="690" y="150">globals.css tokens</tspan>
+</text>
+<text text-anchor="middle" fill="#1971c2" font-size="14" font-family="system-ui,sans-serif">
+  <tspan x="138" y="240">UI Components Layer</tspan>
+</text>
+<text text-anchor="middle" fill="#1971c2" font-size="14" font-family="system-ui,sans-serif">
+  <tspan x="172" y="278">Left Sidebar (sticky)</tspan>
+</text>
+<text text-anchor="middle" fill="#333" font-size="13" font-family="system-ui,sans-serif">
+  <tspan x="172" y="306">HeroSection.tsx</tspan>
+  <tspan x="172" dy="18.85">Navigation.tsx</tspan>
+  <tspan x="172" dy="18.85">(IntersectionObserver)</tspan>
+  <tspan x="172" dy="18.85">SocialLinks.tsx</tspan>
+  <tspan x="172" dy="18.85">MouseGlow.tsx (desktop)</tspan>
+</text>
+<text text-anchor="middle" fill="#1971c2" font-size="14" font-family="system-ui,sans-serif">
+  <tspan x="537" y="278">Main Content (scrollable)</tspan>
+</text>
+<text text-anchor="middle" fill="#333" font-size="13" font-family="system-ui,sans-serif">
+  <tspan x="537" y="306">AboutSection.tsx</tspan>
+  <tspan x="537" dy="18.85">ExperiencesSection.tsx</tspan>
+  <tspan x="537" dy="18.85">ProjectsSection.tsx</tspan>
+  <tspan x="537" dy="18.85">Footer.tsx</tspan>
+</text>
+<text text-anchor="middle" fill="#0a7c5c" font-size="14" font-family="system-ui,sans-serif">
+  <tspan x="403" y="543">Static Data Layer (TypeScript)</tspan>
+</text>
+<text text-anchor="middle" fill="#333" font-size="13" font-family="system-ui,sans-serif">
+  <tspan x="403" y="571">hero-data.ts  ·  experience-data.ts  ·  project-data.ts  ·  social-links-data.ts  ·  about-data.ts</tspan>
+</text>
+<polyline points="403,516 403,498" fill="none" stroke="#0ca678" stroke-width="2" marker-end="url(#ah)"/>
+<polyline points="403,216 403,198" fill="none" stroke="#1c7ed6" stroke-width="2" marker-end="url(#ah)"/>
+</svg>

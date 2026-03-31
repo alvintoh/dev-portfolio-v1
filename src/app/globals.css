@@ -5,7 +5,27 @@
   --foreground: #a6adc8;
   --heading: #e2e8f0;
   --accent: #54d8b9;
+  --accent-rgb: 84 216 185;
+  --glow-rgb: 29 78 216;
+  --glow-opacity: 0.15;
+  --glow-size: 600px;
+  --glow-fade: 80%;
   --surface: #313244;
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --background: #f8fafc;
+  --foreground: #3f4b5c;
+  --heading: #0f172a;
+  --accent: #0f766e;
+  --accent-rgb: 15 118 110;
+  --glow-rgb: 107 114 128;
+  --glow-opacity: 0.22;
+  --glow-size: 520px;
+  --glow-fade: 72%;
+  --surface: #e2e8f0;
+  color-scheme: light;
 }
 
 @theme inline {
@@ -25,5 +45,8 @@
     background: var(--background);
     color: var(--foreground); /* default text color */
     font-family: var(--font-sans);
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
   }
 }
