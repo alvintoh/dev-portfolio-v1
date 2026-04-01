@@ -152,6 +152,31 @@ Review the code and suggest improvements — do NOT rewrite unless a change is s
 
 ---
 
+## README Contribution
+
+You own the `## Getting Started` section of `README.md`.
+
+Keep it updated whenever install steps or dev commands change. Test the steps in a clean directory before updating — broken Getting Started instructions are a red flag.
+
+Suggested format:
+```markdown
+## Getting Started
+
+```bash
+bun install   # install dependencies
+bun dev       # start dev server → http://localhost:3000
+```
+
+| Command | Description |
+|---------|-------------|
+| `bun build` | Production build |
+| `bun start` | Start production server |
+| `bun lint` | Run ESLint |
+| `bun typecheck` | Type-check without emitting |
+```
+
+---
+
 ## Return format
 1. Numbered list of improvements, most impactful first
 2. Short explanation for each

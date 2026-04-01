@@ -28,7 +28,7 @@ Single-page Next.js 16 portfolio using App Router. All content renders on `src/a
 
 **Styling:** Tailwind CSS v4 via PostCSS. Theme tokens in `src/app/globals.css`:
 
-- `--background: #0a192f` · `--foreground: #8892b0` · `--accent: #64ffda`
+- `--background: #1e1e2e` · `--foreground: #a6adc8` · `--accent: #54d8b9`
 
 **Path alias:** `@/*` → `./src/*`
 
@@ -53,15 +53,19 @@ Single-page Next.js 16 portfolio using App Router. All content renders on `src/a
 
 ## Agents
 
-Five agents in `.claude/agents/`. Invoke the one matching your task:
+Seven agents in `.claude/agents/`. Invoke the one matching your task:
 
-| Agent          | Use when…                                              |
-| -------------- | ------------------------------------------------------ |
-| `architect`    | Repository structure, boundaries, data flow, diagrams  |
-| `frontend`     | React, Next.js App Router, TypeScript, Tailwind code   |
-| `backend`      | Route Handlers, Server Actions, server-side TypeScript |
-| `design`       | Layouts, spacing, hierarchy, motion, accessibility     |
-| `portfolio`    | Features, content, SEO, recruiter experience           |
+| Agent          | Use when…                                                        |
+| -------------- | ---------------------------------------------------------------- |
+| `architect`    | Repository structure, boundaries, data flow, diagrams            |
+| `frontend`     | React, Next.js App Router, TypeScript, Tailwind code             |
+| `backend`      | Route Handlers, Server Actions, server-side TypeScript           |
+| `design`       | Layouts, spacing, hierarchy, motion, accessibility               |
+| `spec`         | Data schemas, TypeScript contracts, API specs, prop interfaces   |
+| `devops`       | CI/CD, Vercel deployment, security headers, environments         |
+| `enhancement`  | Roadmap, future features, improvement prioritisation             |
+
+> `docs` is an internal assembler agent used by `/build-readme` — not invoked directly.
 
 ---
 
@@ -77,6 +81,7 @@ Invoke with `/skill-name`. Grouped by the agent best suited for the task.
 - `/superpowers:executing-plans` — execute architecture changes with checkpoints and boundary validation
 - `/superpowers:verification-before-completion` — verify architecture changes with lint/typecheck/tests before declaring done
 - `/simplify` — tighten folder/module structure and reduce unnecessary complexity after changes
+- `/claude-md-management:claude-md-improver` — audit and improve this CLAUDE.md
 
 ### `frontend` — React, Next.js, TypeScript, Tailwind
 
@@ -100,11 +105,28 @@ Invoke with `/skill-name`. Grouped by the agent best suited for the task.
 - `/frontend-design` — create distinctive interfaces with intentional aesthetics
 - `/simplify` — refine and tighten visual implementation after changes
 
-### `portfolio` — Features, content, SEO, recruiter experience
+### `spec` — Data schemas, contracts, and API design
+
+- `/superpowers:brainstorming` — explore contract requirements and data shape decisions before implementation
+- `/superpowers:writing-plans` — plan schema migrations or contract changes before touching code
+- `/superpowers:verification-before-completion` — verify type safety and schema consistency before declaring done
+
+### `devops` — CI/CD, deployment, and infrastructure
+
+- `/superpowers:brainstorming` — explore deployment strategy and CI requirements before setting up pipelines
+- `/superpowers:writing-plans` — plan infrastructure changes with rollback checkpoints
+- `/superpowers:verification-before-completion` — verify deployment config and CI checks before merging
+
+### `architect` + all agents — README and documentation
+
+- `/build-readme` — dispatch all 7 agents in parallel to write their section, then assemble a complete README.md
+- `/arch-diagram` — regenerate architecture diagrams; auto-updates the `## Architecture` section
+
+### `enhancement` — Roadmap and improvement planning
 
 - `/feature-dev` — plan and execute new portfolio sections end-to-end
 - `/claude-code-setup` — analyse repo and recommend Claude Code automations
-- `/claude-md-management:claude-md-improver` — audit and improve this CLAUDE.md
+- `/superpowers:brainstorming` — explore feature requirements and trade-offs before committing to a roadmap item
 
 ### Workflow (any agent)
 

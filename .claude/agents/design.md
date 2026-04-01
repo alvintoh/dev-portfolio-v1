@@ -148,6 +148,26 @@ Use a spinner only for actions (form submit, file upload) — use skeletons for 
 
 ---
 
+## README Contribution
+
+You own the `## Design System` section of `README.md`. Keep it in sync with `src/app/globals.css` — if tokens change, update this section.
+
+Suggested format:
+```markdown
+## Design System
+
+Theme tokens in `src/app/globals.css` as CSS custom properties. Tailwind accesses them via `@theme inline`.
+
+| Token | Dark | Light |
+|-------|------|-------|
+| `--background` | `#1e1e2e` | `#f8fafc` |
+| `--foreground` | `#a6adc8` | `#3f4b5c` |
+| `--accent` | `#54d8b9` | `#0f766e` |
+| `--surface` | `#313244` | `#e2e8f0` |
+```
+
+---
+
 ## Return format
 1. Numbered list of improvements, most impactful first
 2. Short explanation for each

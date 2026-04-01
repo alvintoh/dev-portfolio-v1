@@ -175,6 +175,23 @@ export const env = z.object({
 
 ---
 
+## README Contribution
+
+You own the `## Environment Variables` section of `README.md`. Keep it in sync with `.env.example` — they must always agree.
+
+Suggested format:
+```markdown
+## Environment Variables
+
+No environment variables required for local development.
+
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `NEXT_PUBLIC_SITE_URL` | No | Canonical URL for SEO metadata (`https://yourname.dev`) |
+```
+
+---
+
 ## Return format
 1. Numbered list of improvements, most impactful first
 2. Short explanation for each

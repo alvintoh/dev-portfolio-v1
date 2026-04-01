@@ -14,7 +14,14 @@ export const projectData: Project[] = [
     description:
       "A full-stack messaging platform inspired by Slack, built for private and workplace communication. Create and join multi-channel workspaces, collaborate in real time, and sign in securely with Google or GitHub via OAuth 2.0.",
     image: "/images/projects/convex-chat.jpg",
-    stack: ["Next.js", "React", "Tailwind CSS", "Convex", "Vercel"],
+    stack: [
+      "TypeScript",
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Convex",
+      "Vercel",
+    ],
     websiteUrl: "https://convexchat-dev.vercel.app",
   },
   {
@@ -23,6 +30,7 @@ export const projectData: Project[] = [
       "A real-time collaborative note-taking app inspired by Notion, enhanced with AI-powered features. Generate images with DALL-E, utilize OpenAI autocomplete for writing assistance, and visualize ideas. Now all within a seamless editing experience.",
     image: "/images/projects/gen-note.jpg",
     stack: [
+      "TypeScript",
       "Next.js",
       "React",
       "Dall-E",
@@ -51,7 +59,7 @@ export const projectData: Project[] = [
   {
     title: "The Go Foundry",
     description:
-      "Built a collection of production-style Go projects covering REST APIs, Slack bots, AWS Lambda, and AI integrations — with reusable templates, tests, and Makefile-driven workflows.",
+      "Built a collection of production-style Go projects covering REST APIs, Slack bots, AWS Lambda, and AI integrations with reusable templates, tests, and Makefile-driven workflows.",
     image: "/images/projects/the-go-foundry.jpg",
     stack: [
       "Go",
@@ -68,7 +76,7 @@ export const projectData: Project[] = [
   {
     title: "Orchestra Stack",
     description:
-      "A Docker Compose collection for spinning up production-grade infrastructure — covering databases (ClickHouse, MongoDB, PostgreSQL), message queues (Kafka), and workflow orchestrators (Dagster, Prefect).",
+      "A Docker Compose collection for spinning up production-grade infrastructure, covering databases (ClickHouse, MongoDB, PostgreSQL), message queues (Kafka), and workflow orchestrators (Dagster, Prefect).",
     image: "/images/projects/orchestra-stack.jpg",
     stack: [
       "Docker",

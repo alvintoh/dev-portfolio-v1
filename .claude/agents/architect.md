@@ -94,6 +94,14 @@ Prioritise practical architecture clarity over theoretical purity.
 
 ---
 
+## README Contribution
+
+You own the `## Architecture` section of `README.md`.
+
+Run `/arch-diagram` after any structural changes (new components, moved files, changed data layer). The section is auto-updated with current SVG diagrams — do not hand-edit the image paths.
+
+---
+
 ## Return format
 
 1. Improvements ranked by impact on maintainability and onboarding
