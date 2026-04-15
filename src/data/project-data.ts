@@ -54,7 +54,7 @@ export const projectData: Project[] = [
       "Tailwind CSS",
       "Vercel",
     ],
-    websiteUrl: "http://nimbus-dev.vercel.app",
+    websiteUrl: "https://nimbus-dev.vercel.app",
   },
   {
     title: "The Go Foundry",

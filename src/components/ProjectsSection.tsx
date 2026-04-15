@@ -1,9 +1,9 @@
+import { ArrowUpRight, GitFork, Star } from "lucide-react";
 import Link from "next/link";
 
-import { ArrowUpRight, GitFork, Star } from "lucide-react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
-
 import { projectData } from "@/data/project-data";
+
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function ProjectsSection() {
   return (
@@ -12,9 +12,9 @@ export function ProjectsSection() {
         Projects
       </h2>
       <div className="flex flex-col gap-2 group/cards">
-        {projectData.map((project, i) => (
+        {projectData.map((project) => (
           <Link
-            key={i}
+            key={project.title}
             href={project.websiteUrl}
             target="_blank"
             rel="noopener noreferrer"

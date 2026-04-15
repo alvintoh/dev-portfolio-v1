@@ -1,7 +1,8 @@
-import { aboutData } from "@/data/about-data";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+
+import { aboutData } from "@/data/about-data";
 
 export function AboutSection() {
   return (
@@ -10,7 +11,7 @@ export function AboutSection() {
         About
       </h2>
 
-      <div className="sm:flex sm:flex-row sm:gap-6 sm:mb-20 sm:justify-around sm:items-center margin">
+      <div className="sm:flex sm:flex-row sm:gap-6 sm:mb-16 sm:justify-around sm:items-center margin">
         <div className="hidden sm:block relative w-40 h-40 shrink-0 ring-2 ring-foreground/30 rounded-full">
           {aboutData.avatarImage ?
             <Image
@@ -31,7 +32,7 @@ export function AboutSection() {
       <div className="flex flex-col gap-6 text-foreground">
         <p className="whitespace-pre-line">{aboutData.summary}</p>
         <Link
-          href={aboutData?.resumeLink || "#"}
+          href={aboutData.resumeLink ?? "#"}
           className="inline-flex items-center gap-1 mt-2 text-heading font-medium underline underline-offset-4 decoration-foreground hover:text-accent hover:decoration-accent transition-colors group"
         >
           View Full Resume

@@ -1,6 +1,5 @@
-import Link from "next/link";
-
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 import { experienceData } from "@/data/experience-data";
 
@@ -11,9 +10,9 @@ export function ExperiencesSection() {
         Experience
       </h2>
       <div className="flex flex-col gap-2 group/cards">
-        {experienceData.map((exp, i) => (
+        {experienceData.map((exp) => (
           <Link
-            key={i}
+            key={exp.company}
             href={exp.companyUrl}
             target="_blank"
             rel="noopener noreferrer"

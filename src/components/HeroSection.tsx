@@ -1,17 +1,15 @@
-import { heroData } from "@/data/hero-data";
+"use client";
+
+import { Moon, Sun } from "lucide-react";
 import Link from "next/link";
 
-type HeroSectionProps = {
-  onToggleTheme: () => void;
-  toggleThemeAriaLabel: string;
-  toggleThemeIcon: React.ReactNode;
-};
+import { useTheme } from "@/components/ThemeProvider";
+import { heroData } from "@/data/hero-data";
 
-export const HeroSection = ({
-  onToggleTheme,
-  toggleThemeAriaLabel,
-  toggleThemeIcon,
-}: HeroSectionProps) => {
+export const HeroSection = () => {
+  const { theme, toggleTheme, toggleThemeAriaLabel } = useTheme();
+  const toggleThemeIcon = theme === "dark" ? <Sun size={28} /> : <Moon size={28} />;
+
   return (
     <section className="flex flex-col gap-4">
       <div>
@@ -21,7 +19,7 @@ export const HeroSection = ({
           </h1>
           <button
             type="button"
-            onClick={onToggleTheme}
+            onClick={toggleTheme}
             aria-label={toggleThemeAriaLabel}
             className="inline-flex h-11 w-11 items-center justify-center text-heading transition-colors duration-200 hover:text-accent focus-visible:ring-2 focus-visible:ring-foreground/70 focus:outline-none"
           >

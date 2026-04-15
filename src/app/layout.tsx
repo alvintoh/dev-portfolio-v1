@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Inter_Tight } from "next/font/google";
+
+import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -13,8 +15,9 @@ const interMono = Inter_Tight({
 });
 
 export const metadata: Metadata = {
-  title: "Dev Portfolio",
-  description: "Built with Next.js",
+  title: "Alvin Toh — Full Stack Agentic Engineer",
+  description:
+    "Portfolio of Alvin Toh, a Full Stack Agentic Engineer with 5+ years building cloud-native apps and AI-powered workflows in TypeScript, Java, and Go.",
 };
 
 export default function RootLayout({
@@ -24,8 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${interMono.variable} antialiased font-sans`}>
-        {children}
+      <body
+        className={`${inter.variable} ${interMono.variable} antialiased font-sans`}
+      >
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

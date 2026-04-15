@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-
 import { useEffect, useState } from "react";
 
 const navItems = [
@@ -52,7 +51,6 @@ export function Navigation() {
                 className={`group flex items-center gap-4 py-1 transition-all duration-300`}
                 onClick={(e) => {
                   e.preventDefault();
-                  const sectionId = href.replace("#", "");
                   setActiveSection(sectionId);
                   const element = document.querySelector(href);
                   if (element) {
