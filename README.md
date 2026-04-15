@@ -32,25 +32,28 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 A single-page Next.js 16 app using the App Router, composed in three layers: the app entry point (`src/app`) orchestrates layout and theme state, UI components (`src/components`) render each section in isolation, and a static data layer (`src/data`) owns all content as typed TypeScript modules.
 
 ### Folder Structure
+
 ![Folder Structure](docs/diagrams/structure.svg)
 
 ### Data Flow
+
 ![Data Flow](docs/diagrams/dataflow.svg)
 
 ### System Architecture
+
 ![System Architecture](docs/diagrams/architecture.svg)
 
 ## Data Contracts & Schemas
 
 All content is static TypeScript defined in `src/data/`. There is no runtime data fetching, no CMS, and no database — schemas are compile-time only and tree-shaken into the production bundle.
 
-| File | Exported type(s) | Description |
-| ---- | ---------------- | ----------- |
-| `hero-data.ts` | `HeroData` | Name, title, bio, and optional avatar path for the hero section |
-| `experience-data.ts` | `Experience[]` | Work history cards with period, role, company, optional location, URL, description, and tech stack |
-| `project-data.ts` | `Project[]` | Portfolio project cards with title, description, image path, stack, live URL, and optional GitHub stats |
-| `social-links-data.ts` | `Social[]` | Sidebar and footer links — each entry holds a `react-icons` `IconType`, href, and accessible label |
-| `about-data.ts` | `AboutData` | About section copy with optional avatar, summary prose, and an optional resume link |
+| File                   | Exported type(s) | Description                                                                                             |
+| ---------------------- | ---------------- | ------------------------------------------------------------------------------------------------------- |
+| `hero-data.ts`         | `HeroData`       | Name, title, bio, and optional avatar path for the hero section                                         |
+| `experience-data.ts`   | `Experience[]`   | Work history cards with period, role, company, optional location, URL, description, and tech stack      |
+| `project-data.ts`      | `Project[]`      | Portfolio project cards with title, description, image path, stack, live URL, and optional GitHub stats |
+| `social-links-data.ts` | `Social[]`       | Sidebar and footer links — each entry holds a `react-icons` `IconType`, href, and accessible label      |
+| `about-data.ts`        | `AboutData`      | About section copy with optional avatar, summary prose, and an optional resume link                     |
 
 Import via the `@/data/*` path alias (resolves to `./src/data/`):
 
@@ -70,18 +73,20 @@ Theme tokens are defined as CSS custom properties in `src/app/globals.css` and s
 Theme switches transition smoothly via:
 
 ```css
-transition: background-color 0.2s ease, color 0.2s ease;
+transition:
+  background-color 0.2s ease,
+  color 0.2s ease;
 ```
 
 ### Token reference
 
-| Token | Dark (default) | Light (`data-theme="light"`) |
-| ----- | -------------- | ----------------------------- |
-| `--background` | `#1e1e2e` | `#f8fafc` |
-| `--foreground` | `#a6adc8` | `#3f4b5c` |
-| `--heading` | `#e2e8f0` | `#0f172a` |
-| `--accent` | `#54d8b9` | `#0f766e` |
-| `--surface` | `#313244` | `#e2e8f0` |
+| Token          | Dark (default) | Light (`data-theme="light"`) |
+| -------------- | -------------- | ---------------------------- |
+| `--background` | `#1e1e2e`      | `#f8fafc`                    |
+| `--foreground` | `#a6adc8`      | `#3f4b5c`                    |
+| `--heading`    | `#e2e8f0`      | `#0f172a`                    |
+| `--accent`     | `#54d8b9`      | `#0f766e`                    |
+| `--surface`    | `#313244`      | `#e2e8f0`                    |
 
 Additional tokens (`--accent-rgb`, `--glow-rgb`, `--glow-opacity`, `--glow-size`, `--glow-fade`) support the `MouseGlow` ambient cursor effect and are defined per theme in `globals.css`.
 
@@ -137,6 +142,9 @@ This workflow runs on every push and PR: **install** → **lint** → **typechec
 ### In progress
 
 - [ ] CV download button in the hero section (one-click PDF; recruiter-critical above the fold)
+- [ ] Project archive page to showcase for all past projects
+- [ ] Technical Stack and workflow list to showcase agentic AI workflows
+- [ ] Heroes, Inspiration List (GitHub contributors and their projects with a one liner description for inspiration list)
 - [ ] Open to work status indicator driven by a data file (toggle availability without a code change)
 
 ### Planned
