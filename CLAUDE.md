@@ -65,7 +65,7 @@ Eight agents in `.claude/agents/` (7 user-facing + 1 internal). Invoke the one m
 | `devops`       | CI/CD, Vercel deployment, security headers, environments         |
 | `enhancement`  | Roadmap, future features, improvement prioritisation             |
 
-> `docs` is an internal assembler agent used by `/build-readme` — not invoked directly.
+> `docs` is an internal assembler agent used by `/docs-assemble` — not invoked directly.
 
 ---
 
@@ -75,8 +75,11 @@ Project-specific skills in `.claude/skills/`. Invoke with `/skill-name`.
 
 | Skill | Agent | Purpose |
 | -------------- | ----------- | ------------------------------------------------------- |
+| `/fe-create` | `frontend` | Scaffold and build a new frontend feature following existing project patterns, then lint + typecheck |
 | `/fe-review` | `frontend` | Lint + typecheck, then review all components for TypeScript, React, Next.js, performance, a11y, and security |
 | `/design-review` | `design` | Review all components for spacing, hierarchy, typography, colour, responsive design, motion, and accessibility |
 | `/arch-diagram` | `architect` | Generate Excalidraw diagrams of repository structure, data flow, and system architecture |
-| `/build-readme` | `architect` | Dispatch all agents in parallel to write their section, then assemble a complete README.md |
+| `/arch-add` | `architect` | Evaluate whether adding a new library or tool is architecturally sound before installing |
+| `/arch-replace` | `architect` | Evaluate whether a library or tool replacement is sound before committing to migration |
+| `/docs-assemble` | `docs` | Dispatch all agents in parallel to write their section, then assemble a complete README.md |
 | `/commit-review` | any | Stage all changes, review them, and suggest a commit message before deciding to commit/push |
