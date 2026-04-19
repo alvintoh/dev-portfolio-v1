@@ -9,7 +9,7 @@ const navItems = [
   { label: "Projects", href: "#projects" },
 ];
 
-export function Navigation() {
+export function HomeNavigation() {
   const [activeSection, setActiveSection] = useState("about");
 
   useEffect(() => {

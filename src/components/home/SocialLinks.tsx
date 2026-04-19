@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { socialData } from "@/data/social-links-data";
+import { socialData } from "@/data/home/social-links-data";
 
 export function SocialLinks() {
   return (

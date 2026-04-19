@@ -2,16 +2,16 @@ import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { aboutData } from "@/data/about-data";
+import { aboutData } from "@/data/home/about-data";
 
 export function AboutSection() {
   return (
     <section id="about" className="scroll-mt-24 lg:scroll-mt-0">
-      <h2 className="text-md tracking-widest uppercase text-heading lg:hidden sticky top-0 bg-background/90 backdrop-blur-sm py-4 z-10">
+      <h2 className="text-md tracking-widest uppercase text-heading lg:hidden sticky top-12 bg-background/90 backdrop-blur-sm py-4 z-10">
         About
       </h2>
 
-      <div className="sm:flex sm:flex-row sm:gap-6 sm:mb-16 sm:justify-around sm:items-center margin">
+      <div className="sm:flex sm:flex-row sm:gap-6 sm:mb-16 sm:justify-around sm:items-center">
         <div className="hidden sm:block relative w-40 h-40 shrink-0 ring-2 ring-foreground/30 rounded-full">
           {aboutData.avatarImage ?
             <Image

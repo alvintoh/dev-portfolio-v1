@@ -13,14 +13,14 @@ export function Footer() {
         >
           Brittany Chiang
         </Link>{" "}
-        portfolio website. Designed in{" "}
+        portfolio website. Designed with{" "}
         <Link
-          href="https://www.figma.com"
+          href="https://https://claude.com/product/claude-code"
           className="text-heading hover:text-accent transition-colors"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Figma
+          Claude Code
         </Link>{" "}
         and coded in{" "}
         <Link

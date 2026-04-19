@@ -1,14 +1,14 @@
 import { ArrowUpRight, GitFork, Star } from "lucide-react";
 import Link from "next/link";
 
-import { projectData } from "@/data/project-data";
+import { projectData } from "@/data/home/project-data";
 
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ImageWithFallback } from "../figma/ImageWithFallback";
 
 export function ProjectsSection() {
   return (
     <section id="projects" className="scroll-mt-24 lg:scroll-mt-0">
-      <h2 className="text-md tracking-widest uppercase text-heading lg:hidden sticky top-0 bg-background/90 backdrop-blur-sm py-4 z-10">
+      <h2 className="text-md tracking-widest uppercase text-heading lg:hidden sticky top-12 bg-background/90 backdrop-blur-sm py-4 z-10">
         Projects
       </h2>
       <div className="flex flex-col gap-2 group/cards">
