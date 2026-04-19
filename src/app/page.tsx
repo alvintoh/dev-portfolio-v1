@@ -17,7 +17,7 @@ export default function Home() {
           {/* Left Sidebar — sticky below the layout nav header */}
           <aside className="lg:sticky lg:top-12 lg:flex lg:max-h-[calc(100vh-3rem)] lg:w-[48%] lg:flex-col lg:py-16">
             <HeroSection />
-            <div className="mt-8 lg:mt-16">
+            <div className="mt-8 lg:mt-10">
               <HomeNavigation />
             </div>
             <div className="mt-8 lg:mt-auto">

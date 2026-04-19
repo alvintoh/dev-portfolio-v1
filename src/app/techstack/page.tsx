@@ -14,7 +14,7 @@ export default function TechStackPage() {
     <div className="min-h-dvh relative">
       <MouseGlow />
 
-      <div className="mx-auto max-w-7xl px-6 py-8 md:px-12">
+      <div className="mx-auto max-w-7xl px-6 py-8 md:px-12 lg:pt-16">
         <div className="mb-6">
           <h1 className="text-4xl md:text-5xl font-bold text-heading">
             Tech Stack

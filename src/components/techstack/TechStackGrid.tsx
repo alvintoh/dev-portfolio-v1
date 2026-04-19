@@ -95,7 +95,7 @@ export function TechStackGrid() {
         </div>
       </div>
 
-      <div className="flex gap-20 lg:gap-46">
+      <div className="flex lg:pt-6 gap-20 lg:gap-46">
         {/* Left: sticky category sidebar */}
         <aside className="hidden lg:block w-40 shrink-0">
           <nav
