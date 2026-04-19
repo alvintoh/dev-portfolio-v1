@@ -12,7 +12,7 @@ export default function Home() {
     <div className="min-h-dvh relative">
       <MouseGlow />
 
-      <div className="mx-auto min-h-dvh max-w-7xl px-6 py-12 md:px-12 md:py-16 lg:py-0">
+      <div className="mx-auto min-h-dvh max-w-7xl px-6 py-8 md:px-12 md:py-16 lg:py-0">
         <div className="lg:flex lg:justify-between lg:gap-16">
           {/* Left Sidebar — sticky below the layout nav header */}
           <aside className="lg:sticky lg:top-12 lg:flex lg:max-h-[calc(100vh-3rem)] lg:w-[48%] lg:flex-col lg:py-16">

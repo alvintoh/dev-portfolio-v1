@@ -1,141 +1,158 @@
 "use client";
 
-import { ChevronDown, ChevronUp, Star } from "lucide-react";
-import { useState } from "react";
+import type React from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { techStackData } from "@/data/techstack/tech-stack-data";
 
 type TechCategory = (typeof techStackData)[number];
 type Tool = TechCategory["tools"][number];
+type IconComponent = React.ComponentType<{
+  size?: number | string;
+  className?: string;
+}>;
 
-type CategoryId =
-  | "frontend"
-  | "backend"
-  | "api-data"
-  | "integrations"
-  | "cloud-cicd"
-  | "agentic-ai";
-
-const ALL_ID = "all";
-
-const CATEGORY_COLOURS: Record<CategoryId, string> = {
-  frontend: "bg-blue-500/15 text-blue-400",
-  backend: "bg-violet-500/15 text-violet-400",
-  "api-data": "bg-amber-500/15 text-amber-400",
-  integrations: "bg-rose-500/15 text-rose-400",
-  "cloud-cicd": "bg-sky-500/15 text-sky-400",
-  "agentic-ai": "bg-emerald-500/15 text-emerald-400",
-};
-
-const tabs = [
-  { id: ALL_ID, label: "All" },
-  ...techStackData.map((c) => ({ id: c.id, label: c.label })),
-];
+const COLOUR_PALETTE = [
+  "bg-emerald-500/20 text-emerald-300",
+  "bg-blue-500/20 text-blue-300",
+  "bg-violet-500/20 text-violet-300",
+  "bg-amber-500/20 text-amber-300",
+  "bg-cyan-500/20 text-cyan-300",
+  "bg-rose-500/20 text-rose-300",
+  "bg-sky-500/20 text-sky-300",
+  "bg-orange-500/20 text-orange-300",
+  "bg-pink-500/20 text-pink-300",
+  "bg-teal-500/20 text-teal-300",
+  "bg-indigo-500/20 text-indigo-300",
+] as const;
 
 export function TechStackGrid() {
-  const [activeTab, setActiveTab] = useState<string>(ALL_ID);
-  const [expandedCategories, setExpandedCategories] = useState<Set<string>>(
-    new Set(),
-  );
+  const [activeId, setActiveId] = useState<string>(techStackData[0].id);
+  const sectionRefs = useRef<Map<string, HTMLElement>>(new Map());
 
-  const toggleExpand = (categoryId: string) => {
-    setExpandedCategories((prev) => {
-      const next = new Set(prev);
-      if (next.has(categoryId)) next.delete(categoryId);
-      else next.add(categoryId);
-      return next;
-    });
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveId(entry.target.id);
+          }
+        }
+      },
+      { rootMargin: "-10% 0px -75% 0px" },
+    );
+
+    const refs = sectionRefs.current;
+    for (const el of refs.values()) observer.observe(el);
+
+    const lastId = techStackData[techStackData.length - 1].id;
+    const handleScroll = () => {
+      const nearBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 20;
+      if (nearBottom) setActiveId(lastId);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToSection = (id: string) => {
+    sectionRefs.current
+      .get(id)
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const visibleCategories =
-    activeTab === ALL_ID
-      ? techStackData
-      : techStackData.filter((c) => c.id === activeTab);
-
-  const isAllMode = activeTab === ALL_ID;
-
   return (
-    <div>
-      {/* Category filter tabs */}
-      <div className="flex flex-wrap gap-x-6 gap-y-2 border-b border-surface mb-8">
-        {tabs.map((tab) => {
-          const isActive = activeTab === tab.id;
-          return (
-            <button
-              key={tab.id}
-              type="button"
-              onClick={() => {
-                setActiveTab(tab.id);
-                setExpandedCategories(new Set());
-              }}
-              className={`pb-2 text-xs font-medium tracking-widest uppercase whitespace-nowrap transition-colors duration-150 border-b-2 -mb-px ${
-                isActive
-                  ? "border-accent text-heading"
-                  : "border-transparent text-foreground/50 hover:text-foreground/80"
-              }`}
-            >
-              {tab.label}
-            </button>
-          );
-        })}
+    <>
+      {/* Mobile: sticky horizontal category pill strip */}
+      <div className="lg:hidden sticky top-10 z-10 -mx-6 md:-mx-12 mb-6">
+        <div className="border-b border-foreground/10 bg-background/90 backdrop-blur-sm px-6 md:px-12">
+          <div className="flex flex-wrap gap-2 py-3">
+            {techStackData.map((category) => {
+              const CatIcon = category.icon as IconComponent;
+              return (
+                <button
+                  key={category.id}
+                  type="button"
+                  onClick={() => scrollToSection(category.id)}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/70 ${
+                    activeId === category.id ?
+                      "bg-surface text-heading"
+                    : "text-foreground/60 hover:text-foreground/80"
+                  }`}
+                >
+                  <CatIcon size={12} />
+                  {category.label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
       </div>
 
-      {/* Category sections */}
-      <div className="flex flex-col gap-10">
-        {visibleCategories.map((category) => {
-          const isExpanded = expandedCategories.has(category.id);
-          const favourite = category.tools.find((t) => t.isFavourite);
-          const otherTools = category.tools.filter((t) => !t.isFavourite);
-          const colourClass = CATEGORY_COLOURS[category.id as CategoryId];
-
-          const displayedTools =
-            isAllMode && !isExpanded
-              ? favourite
-                ? [favourite]
-                : []
-              : category.tools;
-
-          return (
-            <div key={category.id}>
-              {/* Section header */}
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xs font-semibold tracking-widest uppercase text-foreground/50">
+      <div className="flex gap-20 lg:gap-46">
+        {/* Left: sticky category sidebar */}
+        <aside className="hidden lg:block w-40 shrink-0">
+          <nav
+            aria-label="Tech stack categories"
+            className="sticky top-24 flex flex-col gap-1"
+          >
+            {techStackData.map((category) => {
+              const CategoryIcon = category.icon as IconComponent;
+              return (
+                <button
+                  key={category.id}
+                  type="button"
+                  onClick={() => scrollToSection(category.id)}
+                  className={`cursor-pointer text-left py-2 flex items-center gap-3 text-xs font-medium tracking-widest uppercase transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/70 ${
+                    activeId === category.id ?
+                      "text-heading"
+                    : "text-foreground/60 hover:text-foreground/80"
+                  }`}
+                >
+                  <CategoryIcon size={20} />
                   {category.label}
-                </h2>
-                {isAllMode && otherTools.length > 0 && (
-                  <button
-                    type="button"
-                    onClick={() => toggleExpand(category.id)}
-                    className="flex items-center gap-1 text-accent text-sm font-medium hover:text-accent/80 transition-colors duration-150"
-                  >
-                    {isExpanded ? (
-                      <>
-                        Show less <ChevronUp size={14} />
-                      </>
-                    ) : (
-                      <>
-                        +{otherTools.length} more <ChevronDown size={14} />
-                      </>
-                    )}
-                  </button>
-                )}
-              </div>
+                </button>
+              );
+            })}
+          </nav>
+        </aside>
 
-              {/* Uniform left-aligned grid — favourite is item #1, others follow */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                {displayedTools.map((tool) => (
+        {/* Right: stacked category sections */}
+        <div className="flex-1 flex flex-col gap-14">
+          {techStackData.map((category, index) => (
+            <section
+              key={category.id}
+              id={category.id}
+              ref={(el) => {
+                if (el) sectionRefs.current.set(category.id, el);
+                else sectionRefs.current.delete(category.id);
+              }}
+              className="scroll-mt-28 lg:scroll-mt-24"
+            >
+              <h2 className="pb-3 text-sm font-semibold tracking-widest uppercase text-heading">
+                {category.label}
+              </h2>
+              <hr className="border-foreground/20 mb-6" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 group/cards">
+                {category.tools.map((tool) => (
                   <ToolCard
                     key={tool.name}
                     tool={tool}
-                    colourClass={colourClass}
+                    colourClass={COLOUR_PALETTE[index % COLOUR_PALETTE.length]}
                   />
                 ))}
               </div>
-            </div>
-          );
-        })}
+            </section>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -145,39 +162,29 @@ type ToolCardProps = {
 };
 
 function ToolCard({ tool, colourClass }: ToolCardProps) {
+  const Icon = tool.icon as IconComponent;
   return (
-    <div
-      className={`flex items-start gap-3 p-4 rounded-xl border transition-all duration-200 ${
-        tool.isFavourite
-          ? "border-surface ring-1 ring-accent/30 bg-surface/60"
-          : "border-surface bg-surface/40 hover:bg-surface/60"
-      }`}
+    <a
+      href={tool.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex items-start gap-4 p-4 rounded-xl border border-foreground/20 bg-surface/40 transition-all duration-200 hover:border-foreground/40 hover:bg-surface/60 hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] hover:drop-shadow-lg lg:group-hover/cards:opacity-50 lg:hover:opacity-100! focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/70"
     >
       <div
-        className={`shrink-0 w-9 h-9 rounded-lg flex items-center justify-center text-sm font-bold ${colourClass}`}
+        aria-hidden="true"
+        className={`shrink-0 w-9 h-9 rounded-lg flex items-center justify-center ${colourClass}`}
       >
-        {tool.shortName}
+        <Icon size={24} />
       </div>
       <div className="min-w-0 flex-1">
-        <div className="flex items-center gap-2">
-          <span className="text-sm font-semibold text-heading leading-tight">
-            {tool.name}
-          </span>
-          {tool.isFavourite && (
-            <>
-              <span className="sr-only">Favourite</span>
-              <Star
-                size={12}
-                aria-hidden="true"
-                className="shrink-0 fill-accent text-accent"
-              />
-            </>
-          )}
-        </div>
-        <p className="text-xs leading-relaxed text-foreground/70 mt-1">
+        <p className="text-sm font-semibold text-heading leading-tight group-hover:text-accent transition-colors duration-200">
+          {tool.name}
+        </p>
+        <p className="text-xs text-foreground/60 mt-1">by {tool.by}</p>
+        <p className="mt-2 text-sm leading-relaxed text-foreground">
           {tool.description}
         </p>
       </div>
-    </div>
+    </a>
   );
 }

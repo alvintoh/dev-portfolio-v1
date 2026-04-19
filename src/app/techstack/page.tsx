@@ -14,14 +14,15 @@ export default function TechStackPage() {
     <div className="min-h-dvh relative">
       <MouseGlow />
 
-      <div className="mx-auto max-w-7xl px-6 py-16 md:px-12">
-        <div className="mb-10">
+      <div className="mx-auto max-w-7xl px-6 py-8 md:px-12">
+        <div className="mb-6">
           <h1 className="text-4xl md:text-5xl font-bold text-heading">
             Tech Stack
           </h1>
-          <p className="mt-4 text-md leading-relaxed max-w-xl">
-            Tools I reach for across the full stack — from UI to infrastructure
-            to agentic workflows. Each category highlights my current go-to.
+          <p className="mt-4 text-md leading-relaxed max-w-2xl">
+            Tools I reach for across the full stack — from agentic workflows,
+            languages to infrastructure. Each category highlights my current
+            go-to.
           </p>
         </div>
 
