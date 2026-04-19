@@ -25,8 +25,7 @@ const ThemeContext = createContext<ThemeContextValue | null>(null);
 
 const THEME_STORAGE_KEY = "theme";
 
-function getInitialTheme(): Theme {
-  if (typeof window === "undefined") return "dark";
+function getClientTheme(): Theme {
   const saved = window.localStorage.getItem(THEME_STORAGE_KEY);
   if (saved === "light" || saved === "dark") return saved;
   return window.matchMedia("(prefers-color-scheme: light)").matches ?
@@ -35,7 +34,13 @@ function getInitialTheme(): Theme {
 }
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(getInitialTheme);
+  const [theme, setTheme] = useState<Theme>("dark");
+
+  useEffect(() => {
+    const clientTheme = getClientTheme();
+    setTheme(clientTheme);
+    document.documentElement.setAttribute("data-theme", clientTheme);
+  }, []);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
