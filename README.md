@@ -6,11 +6,11 @@ Personal developer portfolio built with Next.js 16, React 19, TypeScript, and Ta
 
 ## Overview
 
-Single-page portfolio with a fixed left sidebar (hero, navigation, social links) and a scrollable right content area. Dark/light mode is detected from `prefers-color-scheme` on first visit and persisted to `localStorage`. All content is static TypeScript — no server, no CMS, no database.
+Multi-page portfolio with a fixed left sidebar layout on the home page and a dedicated Tech Stack page with scrollspy navigation. Dark/light mode is detected from `prefers-color-scheme` on first visit and persisted to `localStorage`. All content is static TypeScript — no server, no CMS, no database.
 
 **Stack:** Next.js 16 · React 19 · TypeScript · Tailwind CSS v4 · Lucide Icons · React Icons
 
-## Getting Started
+## Getting started
 
 ```bash
 bun install   # install dependencies
@@ -29,46 +29,75 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Architecture
 
-A single-page Next.js 16 app using the App Router, composed in three layers: the app entry point (`src/app`) orchestrates layout and theme state, UI components (`src/components`) render each section in isolation, and a static data layer (`src/data`) owns all content as typed TypeScript modules.
+A multi-page Next.js 16 app using the App Router, composed in three layers: the app entry points (`src/app`) orchestrate layout and page structure, UI components (`src/components`) render each section in isolation grouped by page, and a static data layer (`src/data`) owns all content as typed TypeScript modules grouped by page.
 
-### Folder Structure
+### Folder structure
 
 ![Folder Structure](docs/diagrams/structure.svg)
 
-### Data Flow
+### Data flow
 
 ![Data Flow](docs/diagrams/dataflow.svg)
 
-### System Architecture
+### System architecture
 
 ![System Architecture](docs/diagrams/architecture.svg)
 
-## Data Contracts & Schemas
+Run `/arch-diagram` in Claude Code to regenerate these diagrams if the component structure changes.
 
-All content is static TypeScript defined in `src/data/`. There is no runtime data fetching, no CMS, and no database — schemas are compile-time only and tree-shaken into the production bundle.
+#### Pages
 
-| File                   | Exported type(s) | Description                                                                                             |
-| ---------------------- | ---------------- | ------------------------------------------------------------------------------------------------------- |
-| `hero-data.ts`         | `HeroData`       | Name, title, bio, and optional avatar path for the hero section                                         |
-| `experience-data.ts`   | `Experience[]`   | Work history cards with period, role, company, optional location, URL, description, and tech stack      |
-| `project-data.ts`      | `Project[]`      | Portfolio project cards with title, description, image path, stack, live URL, and optional GitHub stats |
-| `social-links-data.ts` | `Social[]`       | Sidebar and footer links — each entry holds a `react-icons` `IconType`, href, and accessible label      |
-| `about-data.ts`        | `AboutData`      | About section copy with optional avatar, summary prose, and an optional resume link                     |
+| Route | File | Description |
+| --- | --- | --- |
+| `/` | `src/app/page.tsx` | Home — fixed sidebar (hero, nav, social links) + scrollable content (about, experience, projects) |
+| `/techstack` | `src/app/techstack/page.tsx` | Tech Stack — scrollspy category nav + 12-category tool grid with brand icons |
+
+#### Key components
+
+| Component | Boundary | Description |
+| --- | --- | --- |
+| `ThemeProvider` | `"use client"` | Dark/light context provider; persists to `localStorage`; lives in root layout |
+| `HeaderNavigation` | `"use client"` | Sticky top nav with theme toggle, active-route highlight, mobile hamburger with portal overlay |
+| `HomeNavigation` | `"use client"` | Desktop-only scroll-spy nav using `IntersectionObserver` |
+| `TechStackGrid` | `"use client"` | Scrollspy sidebar + mobile pill strip (hide-on-scroll-down, reveal-on-scroll-up) |
+| `MouseGlow` | `"use client"` | `rAF`-throttled radial gradient cursor effect, desktop only, respects `prefers-reduced-motion` |
+
+All section components (`HeroSection`, `AboutSection`, `ExperiencesSection`, `ProjectsSection`, `SocialLinks`, `Footer`) are Server Components — no `"use client"` boundary.
+
+## Data contracts & schemas
+
+All content is static TypeScript defined in `src/data/`, organised into page-scoped subdirectories. There is no runtime data fetching, no CMS, and no database — schemas are compile-time only.
+
+### `src/data/home/`
+
+| File | Exported type | Description |
+| --- | --- | --- |
+| `hero-data.ts` | `HeroData` | Name, title, bio, and optional avatar path |
+| `experience-data.ts` | `Experience[]` | Work history cards with period, role, company, location, URL, description, and stack |
+| `project-data.ts` | `Project[]` | Portfolio cards with title, description, image path, stack, live URL, and optional GitHub stats |
+| `social-links-data.ts` | `Social[]` | Icon links — each entry holds a `react-icons` `IconType`, href, and accessible label |
+| `about-data.ts` | `AboutData` | About section copy with optional avatar, summary prose, and resume link |
+
+### `src/data/techstack/`
+
+| File | Exported type | Description |
+| --- | --- | --- |
+| `tech-stack-data.ts` | `TechCategory[]` | 12 categories, 30+ tools — each tool has name, icon, author, URL, and description; each category has a label, icon, and rationale paragraph |
 
 Import via the `@/data/*` path alias (resolves to `./src/data/`):
 
 ```ts
-import { heroData } from "@/data/hero-data";
-import { projectData } from "@/data/project-data";
+import { heroData } from "@/data/home/hero-data";
+import { techStackData } from "@/data/techstack/tech-stack-data";
 ```
 
-**Conventions:** Optional fields (`?`) are used only where the value is genuinely absent in real data. Arrays are not currently marked `readonly` at the export site — adding `as const` or `readonly` is recommended to prevent accidental mutation.
+**Conventions:** `as const` is used on static arrays for stricter literal inference. Optional fields (`?`) are used only where the value is genuinely absent in real data.
 
-## Design System
+## Design system
 
 Theme tokens are defined as CSS custom properties in `src/app/globals.css` and surfaced to Tailwind via `@theme inline`, which maps each token to a utility class (e.g. `bg-background`, `text-foreground`, `text-accent`).
 
-**Dark mode is the default** (`:root`). Light mode is activated by setting `data-theme="light"` on the `<html>` element. On first visit the theme is read from `prefers-color-scheme` and then persisted to `localStorage`.
+**Dark mode is the default** (`:root`). Light mode is activated by setting `data-theme="light"` on the `<html>` element. On first visit the theme is read from `prefers-color-scheme` and then persisted to `localStorage`. `ThemeProvider` handles the hydration handshake — the server always renders dark, and a one-time `useEffect` corrects to the stored preference without a flash.
 
 Theme switches transition smoothly via:
 
@@ -80,17 +109,17 @@ transition:
 
 ### Token reference
 
-| Token          | Dark (default) | Light (`data-theme="light"`) |
-| -------------- | -------------- | ---------------------------- |
-| `--background` | `#1e1e2e`      | `#f8fafc`                    |
-| `--foreground` | `#a6adc8`      | `#3f4b5c`                    |
-| `--heading`    | `#e2e8f0`      | `#0f172a`                    |
-| `--accent`     | `#54d8b9`      | `#0f766e`                    |
-| `--surface`    | `#313244`      | `#e2e8f0`                    |
+| Token | Dark (default) | Light (`data-theme="light"`) |
+| --- | --- | --- |
+| `--background` | `#1e1e2e` | `#f8fafc` |
+| `--foreground` | `#a6adc8` | `#3f4b5c` |
+| `--heading` | `#e2e8f0` | `#0f172a` |
+| `--accent` | `#54d8b9` | `#0f766e` |
+| `--surface` | `#313244` | `#e2e8f0` |
 
 Additional tokens (`--accent-rgb`, `--glow-rgb`, `--glow-opacity`, `--glow-size`, `--glow-fade`) support the `MouseGlow` ambient cursor effect and are defined per theme in `globals.css`.
 
-## Environment Variables
+## Environment variables
 
 No environment variables are required to run this project locally.
 
@@ -142,9 +171,8 @@ This workflow runs on every push and PR: **install** → **lint** → **typechec
 ### In progress
 
 - [ ] CV download button in the hero section (one-click PDF; recruiter-critical above the fold)
-- [ ] Project archive page to showcase for all past projects
-- [ ] Technical Stack and workflow list to showcase agentic AI workflows
-- [ ] Heroes, Inspiration List (GitHub contributors and their projects with a one liner description for inspiration list)
+- [ ] Project archive page to showcase all past projects
+- [ ] Heroes / Inspiration list (GitHub contributors with a one-liner description)
 - [ ] Open to work status indicator driven by a data file (toggle availability without a code change)
 
 ### Planned

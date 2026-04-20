@@ -1,67 +1,171 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1011 328" width="1011" height="328">
-<defs><marker id="ah" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#555"/></marker></defs>
-<rect width="1011" height="328" fill="#ffffff"/>
-<rect x="288" y="80" width="210" height="220" rx="8" fill="#a5d8ff" fill-opacity="1" stroke="#339af0" stroke-width="1.5"/>
-<rect x="28" y="80" width="200" height="165" rx="8" fill="#c3fae8" fill-opacity="1" stroke="#0ca678" stroke-width="1.5"/>
-<rect x="798" y="80" width="185" height="148" rx="8" fill="#ffd8a8" fill-opacity="1" stroke="#e67700" stroke-width="1.5"/>
-<rect x="558" y="130" width="180" height="130" rx="8" fill="#e9ecef" fill-opacity="1" stroke="#495057" stroke-width="1.5"/>
-<text text-anchor="middle" fill="#1e1e2e" font-size="20" font-family="system-ui,sans-serif">
-  <tspan x="508" y="48">Data Flow  ·  Static Data → Components → Page → Browser</tspan>
-</text>
-<text text-anchor="middle" fill="#0a7c5c" font-size="14" font-family="system-ui,sans-serif">
-  <tspan x="128" y="106">Static Data</tspan>
-  <tspan x="128" dy="20.3">src/data/</tspan>
-</text>
-<text text-anchor="middle" fill="#333" font-size="13" font-family="system-ui,sans-serif">
-  <tspan x="128" y="151">hero-data.ts</tspan>
-  <tspan x="128" dy="18.85">experience-data.ts</tspan>
-  <tspan x="128" dy="18.85">project-data.ts</tspan>
-  <tspan x="128" dy="18.85">social-links-data.ts</tspan>
-  <tspan x="128" dy="18.85">about-data.ts</tspan>
-</text>
-<text text-anchor="middle" fill="#1971c2" font-size="14" font-family="system-ui,sans-serif">
-  <tspan x="393" y="106">React Components</tspan>
-  <tspan x="393" dy="20.3">src/components/</tspan>
-</text>
-<text text-anchor="middle" fill="#333" font-size="13" font-family="system-ui,sans-serif">
-  <tspan x="393" y="151">HeroSection.tsx</tspan>
-  <tspan x="393" dy="18.85">Navigation.tsx</tspan>
-  <tspan x="393" dy="18.85">AboutSection.tsx</tspan>
-  <tspan x="393" dy="18.85">ExperiencesSection.tsx</tspan>
-  <tspan x="393" dy="18.85">ProjectsSection.tsx</tspan>
-  <tspan x="393" dy="18.85">SocialLinks.tsx</tspan>
-  <tspan x="393" dy="18.85">Footer.tsx</tspan>
-  <tspan x="393" dy="18.85">MouseGlow.tsx</tspan>
-</text>
-<text text-anchor="middle" fill="#212529" font-size="14" font-family="system-ui,sans-serif">
-  <tspan x="648" y="156">Page Assembly</tspan>
-  <tspan x="648" dy="20.3">page.tsx</tspan>
-</text>
-<text text-anchor="middle" fill="#555" font-size="13" font-family="system-ui,sans-serif">
-  <tspan x="648" y="201">&quot;use client&quot;</tspan>
-  <tspan x="648" dy="18.85">Theme state</tspan>
-  <tspan x="648" dy="18.85">Layout composition</tspan>
-</text>
-<text text-anchor="middle" fill="#b05f00" font-size="14" font-family="system-ui,sans-serif">
-  <tspan x="890.5" y="106">Browser</tspan>
-</text>
-<text text-anchor="middle" fill="#555" font-size="13" font-family="system-ui,sans-serif">
-  <tspan x="890.5" y="131">Fixed sidebar</tspan>
-  <tspan x="890.5" dy="18.85">Scrollable content</tspan>
-  <tspan x="890.5" dy="18.85">localStorage theme</tspan>
-  <tspan x="890.5" dy="18.85">MouseGlow (desktop)</tspan>
-  <tspan x="890.5" dy="18.85">IntersectionObserver</tspan>
-</text>
-<text text-anchor="middle" fill="#0a7c5c" font-size="11" font-family="system-ui,sans-serif">
-  <tspan x="258" y="156">TS imports</tspan>
-</text>
-<text text-anchor="middle" fill="#1971c2" font-size="11" font-family="system-ui,sans-serif">
-  <tspan x="528" y="184">props / JSX</tspan>
-</text>
-<text text-anchor="middle" fill="#495057" font-size="11" font-family="system-ui,sans-serif">
-  <tspan x="768" y="189">render</tspan>
-</text>
-<polyline points="228,162 288,162" fill="none" stroke="#0ca678" stroke-width="2" marker-end="url(#ah)"/>
-<polyline points="498,190 558,190" fill="none" stroke="#339af0" stroke-width="2" marker-end="url(#ah)"/>
-<polyline points="738,195 798,195" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#ah)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 360" width="1060" height="360">
+  <defs>
+    <marker id="ah" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#555"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1060" height="360" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text text-anchor="middle" fill="#1e1e2e" font-size="20" font-family="system-ui,sans-serif" font-weight="600">
+    <tspan x="530" y="38">Data Flow  ·  Static Data → Components → Page Assembly → Browser</tspan>
+  </text>
+
+  <!-- Column 1: Static Data -->
+  <rect x="18" y="60" width="212" height="260" rx="8" fill="#c3fae8" fill-opacity="0.8" stroke="#0ca678" stroke-width="1.5"/>
+  <text text-anchor="middle" fill="#0a7c5c" font-size="14" font-family="system-ui,sans-serif" font-weight="600">
+    <tspan x="124" y="80">Static Data</tspan>
+  </text>
+  <text text-anchor="middle" fill="#0a7c5c" font-size="12" font-family="system-ui,sans-serif">
+    <tspan x="124" y="96">src/data/</tspan>
+  </text>
+
+  <!-- home/ subgroup in data -->
+  <rect x="28" y="104" width="192" height="122" rx="4" fill="#ffffff" fill-opacity="0.6" stroke="#0ca678" stroke-width="1" stroke-dasharray="4 2"/>
+  <text text-anchor="middle" fill="#0a7c5c" font-size="11" font-family="system-ui,sans-serif" font-weight="600">
+    <tspan x="124" y="118">home/</tspan>
+  </text>
+  <text text-anchor="middle" fill="#333" font-size="11" font-family="system-ui,sans-serif">
+    <tspan x="124" y="133">hero-data.ts</tspan>
+    <tspan x="124" dy="15">experience-data.ts</tspan>
+    <tspan x="124" dy="15">project-data.ts</tspan>
+    <tspan x="124" dy="15">social-links-data.ts</tspan>
+    <tspan x="124" dy="15">about-data.ts</tspan>
+  </text>
+
+  <!-- techstack/ subgroup in data -->
+  <rect x="28" y="234" width="192" height="42" rx="4" fill="#ffffff" fill-opacity="0.6" stroke="#0ca678" stroke-width="1" stroke-dasharray="4 2"/>
+  <text text-anchor="middle" fill="#0a7c5c" font-size="11" font-family="system-ui,sans-serif" font-weight="600">
+    <tspan x="124" y="248">techstack/</tspan>
+  </text>
+  <text text-anchor="middle" fill="#333" font-size="11" font-family="system-ui,sans-serif">
+    <tspan x="124" y="263">tech-stack-data.ts</tspan>
+  </text>
+
+  <!-- Arrow 1: TS imports -->
+  <polyline points="230,190 280,190" fill="none" stroke="#0ca678" stroke-width="2" marker-end="url(#ah)"/>
+  <text text-anchor="middle" fill="#0a7c5c" font-size="11" font-family="system-ui,sans-serif">
+    <tspan x="255" y="183">TS imports</tspan>
+  </text>
+
+  <!-- Column 2: React Components -->
+  <rect x="282" y="60" width="244" height="260" rx="8" fill="#a5d8ff" fill-opacity="0.6" stroke="#339af0" stroke-width="1.5"/>
+  <text text-anchor="middle" fill="#1971c2" font-size="14" font-family="system-ui,sans-serif" font-weight="600">
+    <tspan x="404" y="80">React Components</tspan>
+  </text>
+  <text text-anchor="middle" fill="#1971c2" font-size="12" font-family="system-ui,sans-serif">
+    <tspan x="404" y="96">src/components/</tspan>
+  </text>
+
+  <!-- home/ subgroup in components -->
+  <rect x="292" y="104" width="109" height="145" rx="4" fill="#ffffff" fill-opacity="0.6" stroke="#339af0" stroke-width="1" stroke-dasharray="4 2"/>
+  <text text-anchor="middle" fill="#1971c2" font-size="11" font-family="system-ui,sans-serif" font-weight="600">
+    <tspan x="346" y="118">home/</tspan>
+  </text>
+  <text text-anchor="middle" fill="#333" font-size="11" font-family="system-ui,sans-serif">
+    <tspan x="346" y="133">HeroSection</tspan>
+    <tspan x="346" dy="15">HomeNavigation</tspan>
+    <tspan x="346" dy="15">AboutSection</tspan>
+    <tspan x="346" dy="14">ExperiencesSection</tspan>
+    <tspan x="346" dy="14">ProjectsSection</tspan>
+    <tspan x="346" dy="14">SocialLinks</tspan>
+    <tspan x="346" dy="14">Footer</tspan>
+  </text>
+
+  <!-- techstack/ subgroup in components -->
+  <rect x="407" y="104" width="109" height="42" rx="4" fill="#ffffff" fill-opacity="0.6" stroke="#339af0" stroke-width="1" stroke-dasharray="4 2"/>
+  <text text-anchor="middle" fill="#1971c2" font-size="11" font-family="system-ui,sans-serif" font-weight="600">
+    <tspan x="461" y="118">techstack/</tspan>
+  </text>
+  <text text-anchor="middle" fill="#333" font-size="11" font-family="system-ui,sans-serif">
+    <tspan x="461" y="133">TechStackGrid</tspan>
+  </text>
+
+  <!-- shared row in components -->
+  <rect x="292" y="257" width="224" height="42" rx="4" fill="#ffffff" fill-opacity="0.6" stroke="#339af0" stroke-width="1" stroke-dasharray="4 2"/>
+  <text text-anchor="middle" fill="#1971c2" font-size="11" font-family="system-ui,sans-serif" font-weight="600">
+    <tspan x="404" y="271">shared</tspan>
+  </text>
+  <text text-anchor="middle" fill="#333" font-size="11" font-family="system-ui,sans-serif">
+    <tspan x="404" y="286">ThemeProvider · HeaderNavigation · MouseGlow</tspan>
+  </text>
+
+  <!-- Arrow 2: props / JSX -->
+  <polyline points="526,190 576,190" fill="none" stroke="#339af0" stroke-width="2" marker-end="url(#ah)"/>
+  <text text-anchor="middle" fill="#1971c2" font-size="11" font-family="system-ui,sans-serif">
+    <tspan x="551" y="183">props / JSX</tspan>
+  </text>
+
+  <!-- Column 3: Page Assembly -->
+  <rect x="578" y="60" width="218" height="260" rx="8" fill="#e9ecef" fill-opacity="1" stroke="#495057" stroke-width="1.5"/>
+  <text text-anchor="middle" fill="#212529" font-size="14" font-family="system-ui,sans-serif" font-weight="600">
+    <tspan x="687" y="80">Page Assembly</tspan>
+  </text>
+  <text text-anchor="middle" fill="#555" font-size="12" font-family="system-ui,sans-serif">
+    <tspan x="687" y="96">src/app/</tspan>
+  </text>
+
+  <!-- layout.tsx -->
+  <rect x="588" y="104" width="198" height="52" rx="4" fill="#ffffff" fill-opacity="0.7" stroke="#495057" stroke-width="1" stroke-dasharray="4 2"/>
+  <text text-anchor="middle" fill="#212529" font-size="11" font-family="system-ui,sans-serif" font-weight="600">
+    <tspan x="687" y="118">layout.tsx  (root, shared)</tspan>
+  </text>
+  <text text-anchor="middle" fill="#555" font-size="11" font-family="system-ui,sans-serif">
+    <tspan x="687" y="134">ThemeProvider + HeaderNavigation</tspan>
+  </text>
+
+  <!-- page.tsx (Home) -->
+  <rect x="588" y="164" width="198" height="52" rx="4" fill="#ffffff" fill-opacity="0.7" stroke="#495057" stroke-width="1" stroke-dasharray="4 2"/>
+  <text text-anchor="middle" fill="#212529" font-size="11" font-family="system-ui,sans-serif" font-weight="600">
+    <tspan x="687" y="178">page.tsx  (Home)</tspan>
+  </text>
+  <text text-anchor="middle" fill="#555" font-size="11" font-family="system-ui,sans-serif">
+    <tspan x="687" y="194">sidebar + main content sections</tspan>
+  </text>
+
+  <!-- techstack/page.tsx -->
+  <rect x="588" y="224" width="198" height="52" rx="4" fill="#ffffff" fill-opacity="0.7" stroke="#495057" stroke-width="1" stroke-dasharray="4 2"/>
+  <text text-anchor="middle" fill="#212529" font-size="11" font-family="system-ui,sans-serif" font-weight="600">
+    <tspan x="687" y="238">techstack/page.tsx</tspan>
+  </text>
+  <text text-anchor="middle" fill="#555" font-size="11" font-family="system-ui,sans-serif">
+    <tspan x="687" y="254">heading + TechStackGrid</tspan>
+  </text>
+
+  <!-- Arrow 3: render -->
+  <polyline points="796,190 846,190" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#ah)"/>
+  <text text-anchor="middle" fill="#495057" font-size="11" font-family="system-ui,sans-serif">
+    <tspan x="821" y="183">render</tspan>
+  </text>
+
+  <!-- Column 4: Browser -->
+  <rect x="848" y="60" width="194" height="260" rx="8" fill="#ffd8a8" fill-opacity="0.7" stroke="#e67700" stroke-width="1.5"/>
+  <text text-anchor="middle" fill="#b05f00" font-size="14" font-family="system-ui,sans-serif" font-weight="600">
+    <tspan x="945" y="80">Browser</tspan>
+  </text>
+
+  <!-- Home output -->
+  <rect x="858" y="94" width="174" height="106" rx="4" fill="#ffffff" fill-opacity="0.6" stroke="#e67700" stroke-width="1" stroke-dasharray="4 2"/>
+  <text text-anchor="middle" fill="#b05f00" font-size="11" font-family="system-ui,sans-serif" font-weight="600">
+    <tspan x="945" y="108">Home</tspan>
+  </text>
+  <text text-anchor="middle" fill="#555" font-size="11" font-family="system-ui,sans-serif">
+    <tspan x="945" y="123">fixed sidebar</tspan>
+    <tspan x="945" dy="15">scrollable content</tspan>
+    <tspan x="945" dy="15">IntersectionObserver nav</tspan>
+    <tspan x="945" dy="15">MouseGlow (desktop)</tspan>
+  </text>
+
+  <!-- Tech Stack output -->
+  <rect x="858" y="208" width="174" height="90" rx="4" fill="#ffffff" fill-opacity="0.6" stroke="#e67700" stroke-width="1" stroke-dasharray="4 2"/>
+  <text text-anchor="middle" fill="#b05f00" font-size="11" font-family="system-ui,sans-serif" font-weight="600">
+    <tspan x="945" y="222">Tech Stack</tspan>
+  </text>
+  <text text-anchor="middle" fill="#555" font-size="11" font-family="system-ui,sans-serif">
+    <tspan x="945" y="237">scrollspy nav</tspan>
+    <tspan x="945" dy="15">tool grid (12 categories)</tspan>
+    <tspan x="945" dy="15">mobile hide-on-scroll</tspan>
+  </text>
 </svg>

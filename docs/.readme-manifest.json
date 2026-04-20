@@ -1,0 +1,33 @@
+{
+  "assembled": "2026-04-20T00:00:00.000Z",
+  "sections": {
+    "getting-started": {
+      "hash": "5240f8a0d0fd5cf16c9eb7cf341ef195c22f1daf",
+      "files": ["package.json"]
+    },
+    "architecture": {
+      "hash": "59366dacf4da3331d93eb472f23d3ed4a2574f9f",
+      "files": ["src/app/", "src/components/", "src/data/"]
+    },
+    "data-contracts": {
+      "hash": "234e4789c6a2d06b2578e51cbc4df8383940de99",
+      "files": ["src/data/"]
+    },
+    "design-system": {
+      "hash": "59366dacf4da3331d93eb472f23d3ed4a2574f9f",
+      "files": ["src/app/globals.css"]
+    },
+    "env-variables": {
+      "hash": "5240f8a0d0fd5cf16c9eb7cf341ef195c22f1daf",
+      "files": ["package.json"]
+    },
+    "deployment": {
+      "hash": "5240f8a0d0fd5cf16c9eb7cf341ef195c22f1daf",
+      "files": ["vercel.json", ".github/workflows/", "package.json"]
+    },
+    "roadmap": {
+      "hash": "59366dacf4da3331d93eb472f23d3ed4a2574f9f",
+      "files": ["src/app/", "src/components/"]
+    }
+  }
+}
