@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 
 import { heroData } from "@/data/home/hero-data";

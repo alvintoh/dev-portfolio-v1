@@ -1,14 +1,13 @@
 import { ArrowUpRight, GitFork, Star } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 import { projectData } from "@/data/home/project-data";
 
-import { ImageWithFallback } from "../figma/ImageWithFallback";
-
 export function ProjectsSection() {
   return (
     <section id="projects" className="scroll-mt-24 lg:scroll-mt-0">
-      <h2 className="text-md tracking-widest uppercase text-heading lg:hidden sticky top-12 bg-background/90 backdrop-blur-sm py-4 z-10">
+      <h2 className="text-md tracking-widest uppercase text-heading lg:hidden sticky top-10 bg-background/90 backdrop-blur-sm py-4 z-10">
         Projects
       </h2>
       <div className="flex flex-col gap-2 group/cards">
@@ -20,11 +19,13 @@ export function ProjectsSection() {
             rel="noopener noreferrer"
             className="group grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-4 sm:gap-6 p-4 -mx-4 rounded-lg transition-all duration-200 hover:bg-surface/60 hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] hover:drop-shadow-lg lg:group-hover/cards:opacity-50 lg:hover:opacity-100!"
           >
-            <div className="overflow-hidden rounded-md border-2 border-foreground/30 group-hover:border-accent/30 sm:mt-1 w-full sm:w-30 h-20 sm:h-18">
-              <ImageWithFallback
+            <div className="relative overflow-hidden rounded-md border-2 border-foreground/30 group-hover:border-accent/30 sm:mt-1 w-full sm:w-30 h-20 sm:h-18">
+              <Image
                 src={project.image}
                 alt={project.title}
-                className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity"
+                fill
+                sizes="(min-width: 640px) 120px, calc(100vw - 80px)"
+                className="object-cover opacity-70 group-hover:opacity-100 transition-opacity"
               />
             </div>
             <div>
