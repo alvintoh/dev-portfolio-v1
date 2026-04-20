@@ -7,7 +7,7 @@ const navItems = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
-];
+] as const;
 
 export function HomeNavigation() {
   const [activeSection, setActiveSection] = useState("about");
@@ -48,7 +48,7 @@ export function HomeNavigation() {
             <li key={href}>
               <Link
                 href={href}
-                className={`group flex items-center gap-4 py-1 transition-all duration-300`}
+                className="group flex items-center gap-4 py-1"
                 onClick={(e) => {
                   e.preventDefault();
                   setActiveSection(sectionId);

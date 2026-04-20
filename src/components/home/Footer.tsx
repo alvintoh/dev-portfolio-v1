@@ -15,7 +15,7 @@ export function Footer() {
         </Link>{" "}
         portfolio website. Designed with{" "}
         <Link
-          href="https://https://claude.com/product/claude-code"
+          href="https://claude.com/product/claude-code"
           className="text-heading hover:text-accent transition-colors"
           target="_blank"
           rel="noopener noreferrer"

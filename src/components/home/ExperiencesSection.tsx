@@ -6,7 +6,7 @@ import { experienceData } from "@/data/home/experience-data";
 export function ExperiencesSection() {
   return (
     <section id="experience" className="scroll-mt-24 lg:scroll-mt-0">
-      <h2 className="text-md tracking-widest uppercase text-heading lg:hidden sticky top-12 bg-background/90 backdrop-blur-sm py-4 z-10">
+      <h2 className="text-md tracking-widest uppercase text-heading lg:hidden sticky top-10 bg-background/90 backdrop-blur-sm py-4 z-10">
         Experience
       </h2>
       <div className="flex flex-col gap-2 group/cards">

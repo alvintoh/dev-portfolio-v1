@@ -36,8 +36,11 @@ function getClientTheme(): Theme {
 export function ThemeProvider({ children }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>("dark");
 
+  // SSR hydration: server always renders "dark"; this one-time effect corrects
+  // to the client's stored preference without a flash.
   useEffect(() => {
     const clientTheme = getClientTheme();
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setTheme(clientTheme);
     document.documentElement.setAttribute("data-theme", clientTheme);
   }, []);

@@ -20,7 +20,7 @@ export default function TechStackPage() {
             Tech Stack
           </h1>
           <p className="mt-4 text-md leading-relaxed max-w-2xl">
-            Tools I reach for across the full stack — from agentic workflows,
+            Tools I reach for across the full stack from agentic workflows,
             languages to infrastructure. Each category highlights my current
             go-to.
           </p>
