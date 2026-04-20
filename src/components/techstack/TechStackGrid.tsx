@@ -13,22 +13,24 @@ type IconComponent = React.ComponentType<{
 }>;
 
 const COLOUR_PALETTE = [
-  "bg-emerald-500/20 text-emerald-300",
-  "bg-blue-500/20 text-blue-300",
-  "bg-violet-500/20 text-violet-300",
-  "bg-amber-500/20 text-amber-300",
-  "bg-cyan-500/20 text-cyan-300",
-  "bg-rose-500/20 text-rose-300",
-  "bg-sky-500/20 text-sky-300",
-  "bg-orange-500/20 text-orange-300",
-  "bg-pink-500/20 text-pink-300",
-  "bg-teal-500/20 text-teal-300",
-  "bg-indigo-500/20 text-indigo-300",
+  "bg-emerald-500/20 text-emerald-300 light:bg-emerald-100 light:text-emerald-700",
+  "bg-blue-500/20 text-blue-300 light:bg-blue-100 light:text-blue-700",
+  "bg-violet-500/20 text-violet-300 light:bg-violet-100 light:text-violet-700",
+  "bg-amber-500/20 text-amber-300 light:bg-amber-100 light:text-amber-700",
+  "bg-cyan-500/20 text-cyan-300 light:bg-cyan-100 light:text-cyan-700",
+  "bg-rose-500/20 text-rose-300 light:bg-rose-100 light:text-rose-700",
+  "bg-sky-500/20 text-sky-300 light:bg-sky-100 light:text-sky-700",
+  "bg-orange-500/20 text-orange-300 light:bg-orange-100 light:text-orange-700",
+  "bg-pink-500/20 text-pink-300 light:bg-pink-100 light:text-pink-700",
+  "bg-teal-500/20 text-teal-300 light:bg-teal-100 light:text-teal-700",
+  "bg-indigo-500/20 text-indigo-300 light:bg-indigo-100 light:text-indigo-700",
 ] as const;
 
 export function TechStackGrid() {
   const [activeId, setActiveId] = useState<string>(techStackData[0].id);
+  const [mobileNavVisible, setMobileNavVisible] = useState(false);
   const sectionRefs = useRef<Map<string, HTMLElement>>(new Map());
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -47,8 +49,17 @@ export function TechStackGrid() {
 
     const lastId = techStackData[techStackData.length - 1].id;
     const handleScroll = () => {
+      const currentY = window.scrollY;
+
+      if (currentY < lastScrollY.current) {
+        setMobileNavVisible(true);
+      } else if (currentY > lastScrollY.current) {
+        setMobileNavVisible(false);
+      }
+      lastScrollY.current = currentY;
+
       const nearBottom =
-        window.innerHeight + window.scrollY >=
+        window.innerHeight + currentY >=
         document.documentElement.scrollHeight - 20;
       if (nearBottom) setActiveId(lastId);
     };
@@ -69,8 +80,12 @@ export function TechStackGrid() {
 
   return (
     <>
-      {/* Mobile: sticky horizontal category pill strip */}
-      <div className="lg:hidden sticky top-10 z-10 -mx-6 md:-mx-12 mb-6">
+      {/* Mobile: sticky horizontal category pill strip — hidden by default, slides in on scroll-up */}
+      <div
+        className={`lg:hidden sticky top-10 z-10 -mx-6 md:-mx-12 mb-6 transition-transform duration-300 ease-in-out ${
+          mobileNavVisible ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
         <div className="border-b border-foreground/10 bg-background/90 backdrop-blur-sm px-6 md:px-12">
           <div className="flex flex-wrap gap-2 py-3">
             {techStackData.map((category) => {
@@ -83,7 +98,7 @@ export function TechStackGrid() {
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/70 ${
                     activeId === category.id ?
                       "bg-surface text-heading"
-                    : "text-foreground/60 hover:text-foreground/80"
+                    : "text-foreground hover:text-heading"
                   }`}
                 >
                   <CatIcon size={12} />
@@ -112,7 +127,7 @@ export function TechStackGrid() {
                   className={`cursor-pointer text-left py-2 flex items-center gap-3 text-xs font-medium tracking-widest uppercase transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/70 ${
                     activeId === category.id ?
                       "text-heading"
-                    : "text-foreground/60 hover:text-foreground/80"
+                    : "text-foreground hover:text-heading"
                   }`}
                 >
                   <CategoryIcon size={20} />
@@ -135,9 +150,12 @@ export function TechStackGrid() {
               }}
               className="scroll-mt-28 lg:scroll-mt-24"
             >
-              <h2 className="pb-3 text-sm font-semibold tracking-widest uppercase text-heading">
+              <h2 className="mb-2 text-sm font-semibold tracking-widest uppercase text-heading">
                 {category.label}
               </h2>
+              <p className="mb-5 text-sm leading-relaxed max-w-2xl">
+                {category.description}
+              </p>
               <hr className="border-foreground/20 mb-6" />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 group/cards">
                 {category.tools.map((tool) => (

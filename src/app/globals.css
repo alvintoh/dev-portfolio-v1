@@ -28,6 +28,8 @@
   color-scheme: light;
 }
 
+@variant light (:root[data-theme="light"] &);
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

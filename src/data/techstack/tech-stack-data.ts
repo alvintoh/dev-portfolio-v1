@@ -66,6 +66,7 @@ type TechCategory = {
   id: string;
   label: string;
   icon: IconComponent;
+  description: string;
   tools: Tool[];
 };
 
@@ -74,6 +75,8 @@ export const techStackData = [
     id: "agentic-ai",
     label: "Agentic AI",
     icon: Bot,
+    description:
+      "AI agents sit at the centre of how I prototype and ship today. Claude Code drives my day-to-day engineering workflow, while GPT and GitHub Copilot cover complementary gaps across the stack. n8n and Inngest handle the automation and background-job orchestration that ties it all together.",
     tools: [
       {
         name: "Claude Code",
@@ -129,6 +132,8 @@ export const techStackData = [
     id: "languages",
     label: "Languages",
     icon: Code2,
+    description:
+      "TypeScript is my default for any new project — it eliminates an entire class of runtime bugs before they reach production. JavaScript remains essential for scripting and tooling across the stack. Java powers the enterprise-grade APIs and microservices I've built with Spring Boot.",
     tools: [
       {
         name: "TypeScript",
@@ -159,6 +164,8 @@ export const techStackData = [
     id: "frontend",
     label: "Frontend",
     icon: Monitor,
+    description:
+      "React and Next.js form the core of every UI I ship. Next.js App Router gives me server components, streaming, and edge rendering out of the box — without reaching for a separate meta-framework. Tailwind CSS keeps styles consistent and fast to iterate on, including this site.",
     tools: [
       {
         name: "React",
@@ -189,6 +196,8 @@ export const techStackData = [
     id: "backend",
     label: "Backend",
     icon: Server,
+    description:
+      "Bun has become my go-to runtime for new JS/TS services — measurably faster than Node.js for both startup time and throughput. Node.js remains the stable choice when ecosystem compatibility matters most. Spring Boot handles the heavier enterprise microservices I've built in Java.",
     tools: [
       {
         name: "Bun",
@@ -218,6 +227,8 @@ export const techStackData = [
     id: "database",
     label: "Database",
     icon: Database,
+    description:
+      "PostgreSQL is my default for anything relational — battle-tested, rich in features, and pairs seamlessly with Prisma for type-safe queries. MongoDB works well when the data model is dynamic or document-shaped, especially for prototypes that evolve quickly.",
     tools: [
       {
         name: "PostgreSQL",
@@ -241,6 +252,8 @@ export const techStackData = [
     id: "cache",
     label: "Cache",
     icon: Gauge,
+    description:
+      "Redis sits between the application layer and the database, handling session storage, rate-limiting counters, and hot-read caching. Its sub-millisecond latency makes it the right tool whenever response speed is non-negotiable and the data fits in memory.",
     tools: [
       {
         name: "Redis",
@@ -256,6 +269,8 @@ export const techStackData = [
     id: "queue",
     label: "Queue",
     icon: Shuffle,
+    description:
+      "Kafka decouples producers from consumers in high-throughput, event-driven systems. It gives me durable, replayable streams that can fan out to multiple downstream services without tight coupling — essential for systems where message loss is not an option.",
     tools: [
       {
         name: "Kafka",
@@ -271,6 +286,8 @@ export const techStackData = [
     id: "data",
     label: "Data",
     icon: BarChart3,
+    description:
+      "ClickHouse handles analytical queries over large datasets where row-oriented databases fall short. Prisma and tRPC keep the data-access layer end-to-end type-safe from schema to client, reducing the surface area for type drift. REST remains the standard choice for public-facing APIs.",
     tools: [
       {
         name: "ClickHouse",
@@ -309,6 +326,8 @@ export const techStackData = [
     id: "auth",
     label: "Authentication",
     icon: ShieldCheck,
+    description:
+      "Clerk is my default for new projects — it ships a complete auth UI and user management layer out of the box, letting me skip the plumbing. Better Auth gives me more control when I need a self-hosted or custom auth flow. Google and GitHub OAuth layer on top for frictionless social sign-in.",
     tools: [
       {
         name: "Clerk",
@@ -338,6 +357,8 @@ export const techStackData = [
     id: "integrations",
     label: "Integrations",
     icon: Plug,
+    description:
+      "Firebase and Convex both provide real-time data sync with minimal backend setup — useful for reactive features that would otherwise require custom WebSocket infrastructure. Sentry sits across every layer to surface errors and performance regressions before users report them.",
     tools: [
       {
         name: "Firebase",
@@ -368,6 +389,8 @@ export const techStackData = [
     id: "ci-cd",
     label: "CI/CD",
     icon: GitBranch,
+    description:
+      "Lefthook runs lint and type checks as a pre-commit gate so broken code never reaches the remote. GitHub Actions handles CI pipelines for most projects with zero infrastructure to maintain. Jenkins takes over for the more complex, self-hosted enterprise pipelines I've worked on.",
     tools: [
       {
         name: "Lefthook",
@@ -399,6 +422,8 @@ export const techStackData = [
     id: "hosting",
     label: "Hosting",
     icon: Cloud,
+    description:
+      "Vercel is where my Next.js projects land first — zero-config deploys with a global edge network and per-commit preview URLs. AWS provides the underlying compute and storage for more complex workloads. Azure covers the Microsoft ecosystem requirements I encounter in enterprise contexts.",
     tools: [
       {
         name: "AWS",
