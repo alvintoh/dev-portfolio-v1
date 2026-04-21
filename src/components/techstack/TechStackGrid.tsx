@@ -28,7 +28,7 @@ const COLOUR_PALETTE = [
 
 export function TechStackGrid() {
   const [activeId, setActiveId] = useState<string>(techStackData[0].id);
-  const [mobileNavVisible, setMobileNavVisible] = useState(false);
+  const [mobileNavVisible, setMobileNavVisible] = useState(true);
   const sectionRefs = useRef<Map<string, HTMLElement>>(new Map());
   const lastScrollY = useRef(0);
 
@@ -80,7 +80,7 @@ export function TechStackGrid() {
 
   return (
     <>
-      {/* Mobile: sticky horizontal category pill strip — collapsed by default, expands on scroll-up */}
+      {/* Mobile: sticky horizontal category pill strip — visible by default, hides on scroll-down, reappears on scroll-up */}
       <div
         className={`lg:hidden sticky top-10 z-10 -mx-6 md:-mx-12 overflow-hidden transition-[max-height] duration-300 ease-in-out ${
           mobileNavVisible ? "max-h-40" : "max-h-0"
