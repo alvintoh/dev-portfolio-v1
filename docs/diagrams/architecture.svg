@@ -1,168 +1,90 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 660" width="860" height="660">
-  <defs>
-    <marker id="ah-down" markerWidth="8" markerHeight="6" refX="4" refY="6" orient="auto">
-      <polygon points="0 0,8 0,4 6" fill="#555"/>
-    </marker>
-    <marker id="ah-up" markerWidth="8" markerHeight="6" refX="4" refY="0" orient="auto">
-      <polygon points="0 6,8 6,4 0" fill="#0a7c5c"/>
-    </marker>
-  </defs>
-
-  <!-- Background -->
-  <rect width="860" height="660" fill="#ffffff"/>
-
-  <!-- Title -->
-  <text text-anchor="middle" fill="#1e1e2e" font-size="22" font-family="system-ui,sans-serif" font-weight="700">
-    <tspan x="430" y="36">System Architecture</tspan>
-  </text>
-
-  <!-- Layer labels (left gutter) -->
-  <text fill="#999" font-size="10" font-family="system-ui,sans-serif" font-weight="600" transform="rotate(-90,14,160)">
-    <tspan text-anchor="middle">FRAMEWORK</tspan>
-  </text>
-  <text fill="#999" font-size="10" font-family="system-ui,sans-serif" font-weight="600" transform="rotate(-90,14,290)">
-    <tspan text-anchor="middle">SHARED UI</tspan>
-  </text>
-  <text fill="#999" font-size="10" font-family="system-ui,sans-serif" font-weight="600" transform="rotate(-90,14,450)">
-    <tspan text-anchor="middle">COMPONENTS</tspan>
-  </text>
-  <text fill="#999" font-size="10" font-family="system-ui,sans-serif" font-weight="600" transform="rotate(-90,14,590)">
-    <tspan text-anchor="middle">DATA</tspan>
-  </text>
-
-  <!-- ═══ Layer 1: Framework ═══ -->
-  <rect x="26" y="56" width="814" height="122" rx="8" fill="#ffd8a8" fill-opacity="0.35" stroke="#e67700" stroke-width="1.5"/>
-  <text text-anchor="middle" fill="#b05f00" font-size="13" font-family="system-ui,sans-serif" font-weight="700">
-    <tspan x="433" y="73">Framework</tspan>
-  </text>
-
-  <!-- Next.js box -->
-  <rect x="36" y="82" width="178" height="84" rx="6" fill="#fff7e6" stroke="#e67700" stroke-width="1.2"/>
-  <text text-anchor="middle" fill="#b05f00" font-size="13" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="125" y="100">Next.js 16</tspan>
-  </text>
-  <text text-anchor="middle" fill="#555" font-size="12" font-family="system-ui,sans-serif">
-    <tspan x="125" y="118">App Router</tspan>
-    <tspan x="125" dy="17">React Compiler (auto-memo)</tspan>
-  </text>
-
-  <!-- React 19 box -->
-  <rect x="224" y="82" width="178" height="84" rx="6" fill="#e7f5ff" stroke="#339af0" stroke-width="1.2"/>
-  <text text-anchor="middle" fill="#1971c2" font-size="13" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="313" y="100">React 19</tspan>
-  </text>
-  <text text-anchor="middle" fill="#555" font-size="12" font-family="system-ui,sans-serif">
-    <tspan x="313" y="118">Server + Client Components</tspan>
-    <tspan x="313" dy="17">"use client" boundaries</tspan>
-  </text>
-
-  <!-- ThemeProvider box -->
-  <rect x="412" y="82" width="206" height="84" rx="6" fill="#f3f0ff" stroke="#7048e8" stroke-width="1.2"/>
-  <text text-anchor="middle" fill="#4a2fa0" font-size="13" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="515" y="100">ThemeProvider</tspan>
-  </text>
-  <text text-anchor="middle" fill="#555" font-size="12" font-family="system-ui,sans-serif">
-    <tspan x="515" y="118">dark/light Context</tspan>
-    <tspan x="515" dy="17">localStorage persistence</tspan>
-  </text>
-
-  <!-- Tailwind box -->
-  <rect x="628" y="82" width="206" height="84" rx="6" fill="#ebfbee" stroke="#0ca678" stroke-width="1.2"/>
-  <text text-anchor="middle" fill="#0a7c5c" font-size="13" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="731" y="100">Tailwind CSS v4</tspan>
-  </text>
-  <text text-anchor="middle" fill="#555" font-size="12" font-family="system-ui,sans-serif">
-    <tspan x="731" y="118">CSS-only config</tspan>
-    <tspan x="731" dy="17">globals.css tokens</tspan>
-  </text>
-
-  <!-- Arrow: Framework → Shared UI -->
-  <polyline points="433,178 433,212" fill="none" stroke="#555" stroke-width="1.8" marker-end="url(#ah-down)"/>
-
-  <!-- ═══ Layer 2: Shared UI ═══ -->
-  <rect x="26" y="214" width="814" height="76" rx="8" fill="#e9ecef" fill-opacity="0.8" stroke="#495057" stroke-width="1.5"/>
-  <text fill="#212529" font-size="13" font-family="system-ui,sans-serif" font-weight="700">
-    <tspan x="40" y="232">Shared UI</tspan>
-  </text>
-  <text text-anchor="middle" fill="#212529" font-size="13" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="433" y="245">HeaderNavigation</tspan>
-  </text>
-  <text text-anchor="middle" fill="#555" font-size="12" font-family="system-ui,sans-serif">
-    <tspan x="433" y="263">sticky top bar  ·  theme toggle  ·  mobile hamburger + portal overlay  ·  active-route highlight</tspan>
-  </text>
-
-  <!-- Arrow: Shared UI → Components -->
-  <polyline points="433,290 433,318" fill="none" stroke="#555" stroke-width="1.8" marker-end="url(#ah-down)"/>
-
-  <!-- ═══ Layer 3: UI Components ═══ -->
-  <rect x="26" y="320" width="814" height="240" rx="8" fill="#dbe4ff" fill-opacity="0.25" stroke="#1c7ed6" stroke-width="1.5"/>
-  <text fill="#1971c2" font-size="13" font-family="system-ui,sans-serif" font-weight="700">
-    <tspan x="40" y="338">UI Components</tspan>
-  </text>
-
-  <!-- Left: Home page box -->
-  <rect x="36" y="344" width="388" height="204" rx="6" fill="#a5d8ff" fill-opacity="0.4" stroke="#339af0" stroke-width="1.2"/>
-  <text text-anchor="middle" fill="#1971c2" font-size="13" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="230" y="362">Home page</tspan>
-  </text>
-
-  <!-- Home: sidebar column -->
-  <rect x="46" y="370" width="182" height="166" rx="4" fill="#ffffff" fill-opacity="0.6" stroke="#339af0" stroke-width="1" stroke-dasharray="4 2"/>
-  <text text-anchor="middle" fill="#1971c2" font-size="11" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="137" y="384">Sidebar (fixed, desktop)</tspan>
-  </text>
-  <text text-anchor="middle" fill="#333" font-size="11" font-family="system-ui,sans-serif">
-    <tspan x="137" y="400">HeroSection</tspan>
-    <tspan x="137" dy="16">HomeNavigation</tspan>
-    <tspan x="137" dy="14">  IntersectionObserver scroll-spy</tspan>
-    <tspan x="137" dy="14">SocialLinks</tspan>
-    <tspan x="137" dy="16">MouseGlow</tspan>
-    <tspan x="137" dy="14">  rAF-throttled, desktop only</tspan>
-  </text>
-
-  <!-- Home: main content column -->
-  <rect x="236" y="370" width="178" height="166" rx="4" fill="#ffffff" fill-opacity="0.6" stroke="#339af0" stroke-width="1" stroke-dasharray="4 2"/>
-  <text text-anchor="middle" fill="#1971c2" font-size="11" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="325" y="384">Main Content (scrollable)</tspan>
-  </text>
-  <text text-anchor="middle" fill="#333" font-size="11" font-family="system-ui,sans-serif">
-    <tspan x="325" y="400">AboutSection</tspan>
-    <tspan x="325" dy="16">ExperiencesSection</tspan>
-    <tspan x="325" dy="16">ProjectsSection</tspan>
-    <tspan x="325" dy="14">  next/image, 5 projects</tspan>
-    <tspan x="325" dy="16">Footer</tspan>
-  </text>
-
-  <!-- Right: Tech Stack page box -->
-  <rect x="436" y="344" width="394" height="204" rx="6" fill="#a5d8ff" fill-opacity="0.4" stroke="#339af0" stroke-width="1.2"/>
-  <text text-anchor="middle" fill="#1971c2" font-size="13" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="633" y="362">Tech Stack page</tspan>
-  </text>
-  <rect x="446" y="370" width="374" height="166" rx="4" fill="#ffffff" fill-opacity="0.6" stroke="#339af0" stroke-width="1" stroke-dasharray="4 2"/>
-  <text text-anchor="middle" fill="#1971c2" font-size="11" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="633" y="384">TechStackGrid  ("use client")</tspan>
-  </text>
-  <text text-anchor="middle" fill="#333" font-size="11" font-family="system-ui,sans-serif">
-    <tspan x="633" y="400">IntersectionObserver scrollspy nav</tspan>
-    <tspan x="633" dy="16">mobile hide-on-scroll behaviour</tspan>
-    <tspan x="633" dy="16">12 categories  ·  30+ tools</tspan>
-    <tspan x="633" dy="16">brand icons via react-icons</tspan>
-    <tspan x="633" dy="16">linked cards (homepage + docs)</tspan>
-  </text>
-
-  <!-- Arrow: Components → Data (pointing up from data to components) -->
-  <polyline points="433,560 433,592" fill="none" stroke="#0a7c5c" stroke-width="1.8" marker-end="url(#ah-down)"/>
-  <text text-anchor="middle" fill="#0a7c5c" font-size="11" font-family="system-ui,sans-serif">
-    <tspan x="468" y="580">import</tspan>
-  </text>
-
-  <!-- ═══ Layer 4: Static Data ═══ -->
-  <rect x="26" y="594" width="814" height="52" rx="8" fill="#c3fae8" fill-opacity="0.8" stroke="#0ca678" stroke-width="1.5"/>
-  <text fill="#0a7c5c" font-size="13" font-family="system-ui,sans-serif" font-weight="700">
-    <tspan x="40" y="613">Static Data  (TypeScript)</tspan>
-  </text>
-  <text text-anchor="middle" fill="#333" font-size="12" font-family="system-ui,sans-serif">
-    <tspan x="490" y="628">src/data/home/  hero · experience · project · social · about</tspan>
-    <tspan x="490" dy="16">src/data/techstack/  tech-stack-data  (TechCategory[], brand icons)</tspan>
-  </text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 814 696" width="814" height="696" style="font-family: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;">
+<defs>
+  <marker id="ah" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#555"/></marker>
+  <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+    <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#00000018"/>
+  </filter>
+</defs>
+<rect width="814" height="696" fill="#f8f9fa" rx="4"/>
+<rect x="32" y="222" width="750" height="340" rx="10" fill="#dbe4ff" fill-opacity="0.2" stroke="#1c7ed6" stroke-width="1.5"/>
+<rect x="32" y="76" width="750" height="130" rx="10" fill="#ffd8a8" fill-opacity="0.3" stroke="#e67700" stroke-width="1.5"/>
+<rect x="32" y="582" width="750" height="82" rx="10" filter="url(#shadow)" fill="#c3fae8" fill-opacity="1" stroke="#0ca678" stroke-width="2"/>
+<rect x="50" y="389" width="252" height="155" rx="10" filter="url(#shadow)" fill="#74c0fc" fill-opacity="0.6" stroke="#1c7ed6" stroke-width="2"/>
+<rect x="320" y="389" width="220" height="155" rx="10" filter="url(#shadow)" fill="#a5d8ff" fill-opacity="0.5" stroke="#339af0" stroke-width="2"/>
+<rect x="50" y="254" width="200" height="120" rx="10" filter="url(#shadow)" fill="#d0bfff" fill-opacity="0.6" stroke="#7048e8" stroke-width="2"/>
+<rect x="50" y="106" width="188" height="82" rx="10" filter="url(#shadow)" fill="#e9ecef" fill-opacity="1" stroke="#495057" stroke-width="2"/>
+<rect x="252" y="106" width="175" height="82" rx="10" filter="url(#shadow)" fill="#a5d8ff" fill-opacity="1" stroke="#339af0" stroke-width="2"/>
+<rect x="440" y="106" width="175" height="82" rx="10" filter="url(#shadow)" fill="#d0bfff" fill-opacity="1" stroke="#7048e8" stroke-width="2"/>
+<rect x="628" y="106" width="132" height="82" rx="10" filter="url(#shadow)" fill="#c3fae8" fill-opacity="1" stroke="#0ca678" stroke-width="2"/>
+<text text-anchor="middle" fill="#1e1e2e" font-size="22" font-weight="700" font-family="inherit">
+  <tspan x="392" y="51.8">System Architecture</tspan>
+</text>
+<text text-anchor="middle" fill="#e67700" font-size="14" font-weight="600" font-family="inherit">
+  <tspan x="132" y="97.6">Browser Runtime</tspan>
+</text>
+<text text-anchor="middle" fill="#222" font-size="14" font-weight="600" font-family="inherit">
+  <tspan x="144" y="129.6">Next.js 16</tspan>
+</text>
+<text text-anchor="middle" fill="#555" font-size="12" font-weight="400" font-family="inherit">
+  <tspan x="144" y="152.8">App Router</tspan>
+  <tspan x="144" dy="16.8">React Compiler</tspan>
+</text>
+<text text-anchor="middle" fill="#1971c2" font-size="14" font-weight="600" font-family="inherit">
+  <tspan x="339.5" y="129.6">React 19</tspan>
+</text>
+<text text-anchor="middle" fill="#555" font-size="12" font-weight="400" font-family="inherit">
+  <tspan x="339.5" y="152.8">&quot;use client&quot;</tspan>
+  <tspan x="339.5" dy="16.8">useState · useEffect</tspan>
+</text>
+<text text-anchor="middle" fill="#4a2fa0" font-size="14" font-weight="600" font-family="inherit">
+  <tspan x="527.5" y="129.6">Theme System</tspan>
+</text>
+<text text-anchor="middle" fill="#555" font-size="12" font-weight="400" font-family="inherit">
+  <tspan x="527.5" y="152.8">ThemeProvider.tsx</tspan>
+  <tspan x="527.5" dy="16.8">dark / light · localStorage</tspan>
+</text>
+<text text-anchor="middle" fill="#0a7c5c" font-size="13" font-weight="400" font-family="inherit">
+  <tspan x="694" y="128.7">Tailwind CSS v4</tspan>
+</text>
+<text text-anchor="middle" fill="#555" font-size="12" font-weight="400" font-family="inherit">
+  <tspan x="694" y="152.8">globals.css tokens</tspan>
+</text>
+<text text-anchor="middle" fill="#1971c2" font-size="14" font-weight="600" font-family="inherit">
+  <tspan x="142" y="242.6">UI Components Layer</tspan>
+</text>
+<text text-anchor="middle" fill="#4a2fa0" font-size="13" font-weight="400" font-family="inherit">
+  <tspan x="150" y="276.7">Shared Components</tspan>
+</text>
+<text text-anchor="middle" fill="#333" font-size="12" font-weight="400" font-family="inherit">
+  <tspan x="150" y="299.8">HeaderNavigation.tsx</tspan>
+  <tspan x="150" dy="16.8">MouseGlow.tsx (desktop)</tspan>
+  <tspan x="150" dy="16.8">ThemeProvider.tsx</tspan>
+</text>
+<text text-anchor="middle" fill="#1971c2" font-size="14" font-weight="600" font-family="inherit">
+  <tspan x="176" y="412.6">Home Page  /</tspan>
+</text>
+<text text-anchor="middle" fill="#333" font-size="12" font-weight="400" font-family="inherit">
+  <tspan x="176" y="434.8">HeroSection · HomeNavigation</tspan>
+  <tspan x="176" dy="16.8">(IntersectionObserver)</tspan>
+  <tspan x="176" dy="16.8">AboutSection</tspan>
+  <tspan x="176" dy="16.8">ExperiencesSection</tspan>
+  <tspan x="176" dy="16.8">ProjectsSection · SocialLinks · Footer</tspan>
+</text>
+<text text-anchor="middle" fill="#1971c2" font-size="14" font-weight="600" font-family="inherit">
+  <tspan x="430" y="412.6">Tech Stack Page  /techstack</tspan>
+</text>
+<text text-anchor="middle" fill="#333" font-size="12" font-weight="400" font-family="inherit">
+  <tspan x="430" y="434.8">TechStackGrid.tsx</tspan>
+  <tspan x="430" dy="16.8">Category filter pills</tspan>
+  <tspan x="430" dy="16.8">Mobile strip</tspan>
+  <tspan x="430" dy="16.8">Responsive grid</tspan>
+</text>
+<text text-anchor="middle" fill="#0a7c5c" font-size="14" font-weight="600" font-family="inherit">
+  <tspan x="407" y="605.6">Static Data Layer (TypeScript)</tspan>
+</text>
+<text text-anchor="middle" fill="#333" font-size="13" font-weight="400" font-family="inherit">
+  <tspan x="407" y="633.7">data/home/  hero · experience · project · social-links · about      data/techstack/  tech-stack-data</tspan>
+</text>
+<polyline points="407,580 407,562" fill="none" stroke="#0ca678" stroke-width="2" marker-end="url(#ah)"/>
+<polyline points="407,220 407,202" fill="none" stroke="#1c7ed6" stroke-width="2" marker-end="url(#ah)"/>
 </svg>

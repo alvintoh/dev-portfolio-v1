@@ -1,175 +1,111 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 460" width="1060" height="460">
-  <defs>
-    <marker id="ah" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-      <polygon points="0 0,8 3,0 6" fill="#555"/>
-    </marker>
-  </defs>
-
-  <!-- Background -->
-  <rect width="1060" height="460" fill="#ffffff"/>
-
-  <!-- Title -->
-  <text text-anchor="middle" fill="#1e1e2e" font-size="20" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="530" y="38">dev-portfolio-v1  ·  Folder Structure</tspan>
-  </text>
-
-  <!-- src/ outer container -->
-  <rect x="18" y="58" width="740" height="280" rx="8" fill="#dbe4ff" fill-opacity="0.25" stroke="#1c7ed6" stroke-width="1.5" stroke-dasharray="6 3"/>
-  <text fill="#1971c2" font-size="13" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="28" y="76">src/</tspan>
-  </text>
-
-  <!-- src/app/ box -->
-  <rect x="28" y="84" width="172" height="144" rx="6" fill="#e9ecef" fill-opacity="1" stroke="#495057" stroke-width="1.5"/>
-  <text text-anchor="middle" fill="#212529" font-size="13" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="114" y="102">src/app/</tspan>
-  </text>
-  <text text-anchor="middle" fill="#555" font-size="12" font-family="system-ui,sans-serif">
-    <tspan x="114" y="120">page.tsx</tspan>
-    <tspan x="114" dy="17">layout.tsx</tspan>
-    <tspan x="114" dy="17">globals.css</tspan>
-    <tspan x="114" dy="17">favicon.ico</tspan>
-  </text>
-  <text text-anchor="middle" fill="#777" font-size="11" font-family="system-ui,sans-serif" font-style="italic">
-    <tspan x="114" dy="17">techstack/</tspan>
-  </text>
-  <text text-anchor="middle" fill="#555" font-size="12" font-family="system-ui,sans-serif">
-    <tspan x="114" dy="14">  page.tsx</tspan>
-  </text>
-
-  <!-- src/components/ box -->
-  <rect x="214" y="84" width="300" height="244" rx="6" fill="#a5d8ff" fill-opacity="0.5" stroke="#339af0" stroke-width="1.5"/>
-  <text text-anchor="middle" fill="#1971c2" font-size="13" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="364" y="102">src/components/</tspan>
-  </text>
-
-  <!-- home/ subgroup -->
-  <rect x="224" y="108" width="130" height="198" rx="4" fill="#ffffff" fill-opacity="0.55" stroke="#339af0" stroke-width="1" stroke-dasharray="4 2"/>
-  <text text-anchor="middle" fill="#1971c2" font-size="11" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="289" y="122">home/</tspan>
-  </text>
-  <text text-anchor="middle" fill="#333" font-size="11" font-family="system-ui,sans-serif">
-    <tspan x="289" y="138">HeroSection.tsx</tspan>
-    <tspan x="289" dy="15">HomeNavigation.tsx</tspan>
-    <tspan x="289" dy="15">AboutSection.tsx</tspan>
-    <tspan x="289" dy="15">ExperiencesSection.tsx</tspan>
-    <tspan x="289" dy="15">ProjectsSection.tsx</tspan>
-    <tspan x="289" dy="15">SocialLinks.tsx</tspan>
-    <tspan x="289" dy="15">Footer.tsx</tspan>
-  </text>
-
-  <!-- techstack/ subgroup -->
-  <rect x="364" y="108" width="138" height="56" rx="4" fill="#ffffff" fill-opacity="0.55" stroke="#339af0" stroke-width="1" stroke-dasharray="4 2"/>
-  <text text-anchor="middle" fill="#1971c2" font-size="11" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="433" y="122">techstack/</tspan>
-  </text>
-  <text text-anchor="middle" fill="#333" font-size="11" font-family="system-ui,sans-serif">
-    <tspan x="433" y="138">TechStackGrid.tsx</tspan>
-  </text>
-
-  <!-- figma/ subgroup -->
-  <rect x="364" y="172" width="138" height="42" rx="4" fill="#ffffff" fill-opacity="0.55" stroke="#339af0" stroke-width="1" stroke-dasharray="4 2"/>
-  <text text-anchor="middle" fill="#1971c2" font-size="11" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="433" y="186">figma/</tspan>
-  </text>
-  <text text-anchor="middle" fill="#333" font-size="11" font-family="system-ui,sans-serif">
-    <tspan x="433" y="201">ImageWithFallback.tsx</tspan>
-  </text>
-
-  <!-- shared group -->
-  <rect x="364" y="222" width="138" height="72" rx="4" fill="#ffffff" fill-opacity="0.55" stroke="#339af0" stroke-width="1" stroke-dasharray="4 2"/>
-  <text text-anchor="middle" fill="#1971c2" font-size="11" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="433" y="236">shared</tspan>
-  </text>
-  <text text-anchor="middle" fill="#333" font-size="11" font-family="system-ui,sans-serif">
-    <tspan x="433" y="251">HeaderNavigation.tsx</tspan>
-    <tspan x="433" dy="15">MouseGlow.tsx</tspan>
-    <tspan x="433" dy="15">ThemeProvider.tsx</tspan>
-  </text>
-
-  <!-- src/data/ box -->
-  <rect x="528" y="84" width="220" height="244" rx="6" fill="#c3fae8" fill-opacity="0.7" stroke="#0ca678" stroke-width="1.5"/>
-  <text text-anchor="middle" fill="#0a7c5c" font-size="13" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="638" y="102">src/data/</tspan>
-  </text>
-
-  <!-- data/home/ subgroup -->
-  <rect x="538" y="108" width="195" height="116" rx="4" fill="#ffffff" fill-opacity="0.55" stroke="#0ca678" stroke-width="1" stroke-dasharray="4 2"/>
-  <text text-anchor="middle" fill="#0a7c5c" font-size="11" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="635" y="122">home/</tspan>
-  </text>
-  <text text-anchor="middle" fill="#333" font-size="11" font-family="system-ui,sans-serif">
-    <tspan x="635" y="138">hero-data.ts</tspan>
-    <tspan x="635" dy="15">experience-data.ts</tspan>
-    <tspan x="635" dy="15">project-data.ts</tspan>
-    <tspan x="635" dy="15">social-links-data.ts</tspan>
-    <tspan x="635" dy="15">about-data.ts</tspan>
-  </text>
-
-  <!-- data/techstack/ subgroup -->
-  <rect x="538" y="232" width="195" height="42" rx="4" fill="#ffffff" fill-opacity="0.55" stroke="#0ca678" stroke-width="1" stroke-dasharray="4 2"/>
-  <text text-anchor="middle" fill="#0a7c5c" font-size="11" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="635" y="246">techstack/</tspan>
-  </text>
-  <text text-anchor="middle" fill="#333" font-size="11" font-family="system-ui,sans-serif">
-    <tspan x="635" y="261">tech-stack-data.ts</tspan>
-  </text>
-
-  <!-- Bottom row: Config Files -->
-  <rect x="18" y="356" width="240" height="84" rx="6" fill="#fff3bf" fill-opacity="1" stroke="#f08c00" stroke-width="1.5"/>
-  <text text-anchor="middle" fill="#7c5e10" font-size="13" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="138" y="374">Config Files</tspan>
-  </text>
-  <text text-anchor="middle" fill="#555" font-size="12" font-family="system-ui,sans-serif">
-    <tspan x="138" y="393">package.json  ·  next.config.ts</tspan>
-    <tspan x="138" dy="17">tsconfig.json  ·  eslint.config.mjs</tspan>
-  </text>
-
-  <!-- Bottom row: public/ -->
-  <rect x="272" y="356" width="200" height="84" rx="6" fill="#ffd8a8" fill-opacity="1" stroke="#e67700" stroke-width="1.5"/>
-  <text text-anchor="middle" fill="#b05f00" font-size="13" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="372" y="374">public/</tspan>
-  </text>
-  <text text-anchor="middle" fill="#555" font-size="12" font-family="system-ui,sans-serif">
-    <tspan x="372" y="393">images/hero/</tspan>
-    <tspan x="372" dy="17">images/projects/</tspan>
-  </text>
-
-  <!-- Bottom row: docs/diagrams/ -->
-  <rect x="486" y="356" width="200" height="84" rx="6" fill="#c3fae8" fill-opacity="1" stroke="#0ca678" stroke-width="1.5"/>
-  <text text-anchor="middle" fill="#0a7c5c" font-size="13" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="586" y="374">docs/diagrams/</tspan>
-  </text>
-  <text text-anchor="middle" fill="#555" font-size="12" font-family="system-ui,sans-serif">
-    <tspan x="586" y="393">*.excalidraw</tspan>
-    <tspan x="586" dy="17">*.svg</tspan>
-  </text>
-
-  <!-- Right side: .claude/ -->
-  <rect x="776" y="58" width="266" height="200" rx="6" fill="#d0bfff" fill-opacity="0.6" stroke="#7048e8" stroke-width="1.5"/>
-  <text text-anchor="middle" fill="#4a2fa0" font-size="13" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="909" y="76">.claude/</tspan>
-  </text>
-
-  <!-- agents/ subgroup -->
-  <rect x="786" y="82" width="246" height="78" rx="4" fill="#ffffff" fill-opacity="0.55" stroke="#7048e8" stroke-width="1" stroke-dasharray="4 2"/>
-  <text text-anchor="middle" fill="#4a2fa0" font-size="11" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="909" y="96">agents/</tspan>
-  </text>
-  <text text-anchor="middle" fill="#333" font-size="11" font-family="system-ui,sans-serif">
-    <tspan x="909" y="111">architect · backend · design</tspan>
-    <tspan x="909" dy="15">devops · docs · enhancement</tspan>
-    <tspan x="909" dy="15">frontend · spec</tspan>
-  </text>
-
-  <!-- skills/ subgroup -->
-  <rect x="786" y="168" width="246" height="80" rx="4" fill="#ffffff" fill-opacity="0.55" stroke="#7048e8" stroke-width="1" stroke-dasharray="4 2"/>
-  <text text-anchor="middle" fill="#4a2fa0" font-size="11" font-family="system-ui,sans-serif" font-weight="600">
-    <tspan x="909" y="182">skills/</tspan>
-  </text>
-  <text text-anchor="middle" fill="#333" font-size="11" font-family="system-ui,sans-serif">
-    <tspan x="909" y="197">arch-add · arch-diagram · arch-replace</tspan>
-    <tspan x="909" dy="15">commit-review · design-review</tspan>
-    <tspan x="909" dy="15">docs-assemble · fe-create · fe-review</tspan>
-  </text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1044 609" width="1044" height="609" style="font-family: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;">
+<defs>
+  <marker id="ah" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#555"/></marker>
+  <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+    <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#00000018"/>
+  </filter>
+</defs>
+<rect width="1044" height="609" fill="#f8f9fa" rx="4"/>
+<rect x="32" y="72" width="930" height="310" rx="10" fill="#dbe4ff" fill-opacity="0.25" stroke="#1c7ed6" stroke-width="1.5"/>
+<rect x="287" y="106" width="220" height="245" rx="10" filter="url(#shadow)" fill="#a5d8ff" fill-opacity="1" stroke="#339af0" stroke-width="2"/>
+<rect x="718" y="402" width="250" height="175" rx="10" filter="url(#shadow)" fill="#d0bfff" fill-opacity="1" stroke="#7048e8" stroke-width="2"/>
+<rect x="50" y="106" width="215" height="155" rx="10" filter="url(#shadow)" fill="#e9ecef" fill-opacity="1" stroke="#495057" stroke-width="2"/>
+<rect x="527" y="224" width="215" height="127" rx="10" filter="url(#shadow)" fill="#d0bfff" fill-opacity="1" stroke="#7048e8" stroke-width="2"/>
+<rect x="767" y="106" width="175" height="155" rx="10" filter="url(#shadow)" fill="#c3fae8" fill-opacity="1" stroke="#0ca678" stroke-width="2"/>
+<rect x="32" y="402" width="250" height="90" rx="10" filter="url(#shadow)" fill="#fff3bf" fill-opacity="1" stroke="#f08c00" stroke-width="2"/>
+<rect x="527" y="106" width="215" height="100" rx="10" filter="url(#shadow)" fill="#74c0fc" fill-opacity="1" stroke="#339af0" stroke-width="2"/>
+<rect x="302" y="402" width="188" height="90" rx="10" filter="url(#shadow)" fill="#ffd8a8" fill-opacity="1" stroke="#e67700" stroke-width="2"/>
+<rect x="510" y="402" width="188" height="90" rx="10" filter="url(#shadow)" fill="#c3fae8" fill-opacity="1" stroke="#0ca678" stroke-width="2"/>
+<rect x="767" y="279" width="175" height="75" rx="10" filter="url(#shadow)" fill="#96f2d7" fill-opacity="1" stroke="#0ca678" stroke-width="2"/>
+<text text-anchor="middle" fill="#1e1e2e" font-size="20" font-weight="700" font-family="inherit">
+  <tspan x="562" y="50">dev-portfolio-v1  ·  Folder Structure</tspan>
+</text>
+<text text-anchor="middle" fill="#1971c2" font-size="14" font-weight="600" font-family="inherit">
+  <tspan x="152" y="93.6">Source Code  ·  src/</tspan>
+</text>
+<text text-anchor="middle" fill="#212529" font-size="14" font-weight="600" font-family="inherit">
+  <tspan x="157.5" y="130.6">src/app/</tspan>
+</text>
+<text text-anchor="middle" fill="#555" font-size="13" font-weight="400" font-family="inherit">
+  <tspan x="157.5" y="153.7">page.tsx</tspan>
+  <tspan x="157.5" dy="18.2">layout.tsx</tspan>
+  <tspan x="157.5" dy="18.2">globals.css</tspan>
+  <tspan x="157.5" dy="18.2">favicon.ico</tspan>
+  <tspan x="157.5" dy="18.2">techstack/</tspan>
+  <tspan x="157.5" dy="18.2">page.tsx</tspan>
+</text>
+<text text-anchor="middle" fill="#1971c2" font-size="13" font-weight="400" font-family="inherit">
+  <tspan x="397" y="129.7">src/components/home/</tspan>
+</text>
+<text text-anchor="middle" fill="#333" font-size="13" font-weight="400" font-family="inherit">
+  <tspan x="397" y="153.7">AboutSection.tsx</tspan>
+  <tspan x="397" dy="18.2">ExperiencesSection.tsx</tspan>
+  <tspan x="397" dy="18.2">Footer.tsx</tspan>
+  <tspan x="397" dy="18.2">HeroSection.tsx</tspan>
+  <tspan x="397" dy="18.2">HomeNavigation.tsx</tspan>
+  <tspan x="397" dy="18.2">ProjectsSection.tsx</tspan>
+  <tspan x="397" dy="18.2">SocialLinks.tsx</tspan>
+</text>
+<text text-anchor="middle" fill="#1971c2" font-size="13" font-weight="400" font-family="inherit">
+  <tspan x="634.5" y="129.7">src/components/techstack/</tspan>
+</text>
+<text text-anchor="middle" fill="#333" font-size="13" font-weight="400" font-family="inherit">
+  <tspan x="634.5" y="153.7">TechStackGrid.tsx</tspan>
+</text>
+<text text-anchor="middle" fill="#4a2fa0" font-size="13" font-weight="400" font-family="inherit">
+  <tspan x="634.5" y="247.7">src/components/ (shared)</tspan>
+</text>
+<text text-anchor="middle" fill="#333" font-size="13" font-weight="400" font-family="inherit">
+  <tspan x="634.5" y="271.7">HeaderNavigation.tsx</tspan>
+  <tspan x="634.5" dy="18.2">MouseGlow.tsx</tspan>
+  <tspan x="634.5" dy="18.2">ThemeProvider.tsx</tspan>
+  <tspan x="634.5" dy="18.2">figma/ImageWithFallback.tsx</tspan>
+</text>
+<text text-anchor="middle" fill="#0a7c5c" font-size="13" font-weight="400" font-family="inherit">
+  <tspan x="854.5" y="129.7">src/data/home/</tspan>
+</text>
+<text text-anchor="middle" fill="#333" font-size="13" font-weight="400" font-family="inherit">
+  <tspan x="854.5" y="153.7">hero-data.ts</tspan>
+  <tspan x="854.5" dy="18.2">experience-data.ts</tspan>
+  <tspan x="854.5" dy="18.2">project-data.ts</tspan>
+  <tspan x="854.5" dy="18.2">social-links-data.ts</tspan>
+  <tspan x="854.5" dy="18.2">about-data.ts</tspan>
+</text>
+<text text-anchor="middle" fill="#0a7c5c" font-size="13" font-weight="400" font-family="inherit">
+  <tspan x="854.5" y="302.7">src/data/techstack/</tspan>
+</text>
+<text text-anchor="middle" fill="#333" font-size="13" font-weight="400" font-family="inherit">
+  <tspan x="854.5" y="326.7">tech-stack-data.ts</tspan>
+</text>
+<text text-anchor="middle" fill="#7c5e10" font-size="14" font-weight="600" font-family="inherit">
+  <tspan x="157" y="426.6">Config Files</tspan>
+</text>
+<text text-anchor="middle" fill="#555" font-size="13" font-weight="400" font-family="inherit">
+  <tspan x="157" y="449.7">package.json · next.config.ts</tspan>
+  <tspan x="157" dy="18.2">tsconfig.json · eslint.config.mjs</tspan>
+</text>
+<text text-anchor="middle" fill="#b05f00" font-size="14" font-weight="600" font-family="inherit">
+  <tspan x="396" y="426.6">public/</tspan>
+</text>
+<text text-anchor="middle" fill="#555" font-size="13" font-weight="400" font-family="inherit">
+  <tspan x="396" y="449.7">images/hero/</tspan>
+  <tspan x="396" dy="18.2">images/projects/</tspan>
+</text>
+<text text-anchor="middle" fill="#0a7c5c" font-size="14" font-weight="600" font-family="inherit">
+  <tspan x="604" y="426.6">docs/diagrams/</tspan>
+</text>
+<text text-anchor="middle" fill="#555" font-size="13" font-weight="400" font-family="inherit">
+  <tspan x="604" y="449.7">*.excalidraw  ·  *.svg</tspan>
+</text>
+<text text-anchor="middle" fill="#4a2fa0" font-size="14" font-weight="600" font-family="inherit">
+  <tspan x="843" y="426.6">.claude/</tspan>
+</text>
+<text text-anchor="middle" fill="#333" font-size="13" font-weight="400" font-family="inherit">
+  <tspan x="843" y="449.7">agents/</tspan>
+  <tspan x="843" dy="18.2">architect · backend · design</tspan>
+  <tspan x="843" dy="18.2">frontend · spec · devops · enhancement</tspan>
+  <tspan x="843" dy="18.2">skills/</tspan>
+  <tspan x="843" dy="18.2">fe-create · fe-review</tspan>
+  <tspan x="843" dy="18.2">design-review · arch-diagram</tspan>
+</text>
 </svg>
