@@ -149,29 +149,46 @@ Report:
 
 ---
 
-## Step 7: Sync CLAUDE.md (optional)
+## Step 7: Update agents/skills sections in destination CLAUDE.md
 
-Check whether the source `CLAUDE.md` differs from the destination's:
+The destination `CLAUDE.md` is project-specific — do **not** overwrite it.
+Instead, update only the agents and skills reference sections to match the
+newly synced `.claude/` folder.
 
-```bash
-diff CLAUDE.md "<destination>/CLAUDE.md" 2>/dev/null || echo "(destination has no CLAUDE.md)"
+### 7a: Read both files
+
+Read the destination `CLAUDE.md` and the source `CLAUDE.md`. If the destination
+has no `CLAUDE.md`, skip this step and say so.
+
+### 7b: Derive the new agents and skills content
+
+From the synced `.claude/agents/` files, build an agents table. From the synced
+`.claude/skills/` files, build a skills table. Use the frontmatter `name` and
+`description` fields from each file as the table rows.
+
+### 7c: Locate the sections to replace
+
+Find the agents section and skills section in the destination `CLAUDE.md`. They
+may be under any heading that references agents or skills (e.g. `## Agents`,
+`## Project Agents`, `## Project Skills`, `## Skills`). Identify the full span
+of each section — from its heading line to the line before the next `##` heading
+(or end of file).
+
+### 7d: Show what will change
+
+Print a brief before/after for each section being updated. Then ask:
+
 ```
-
-- If they are identical, print `CLAUDE.md is already up to date.` and stop.
-- If they differ (or destination has none), show a brief summary of what changed
-  (added/removed line counts from the diff output) and ask:
-
-```
-Update CLAUDE.md at destination?
+Update agents/skills sections in destination CLAUDE.md?
 (y)es / (n)o
 ```
 
-If `y` or `yes`, copy it:
-
-```bash
-cp CLAUDE.md "<destination>/CLAUDE.md"
-```
-
-Confirm: `CLAUDE.md updated.`
-
 If `n` or `no`, print `CLAUDE.md left unchanged.` and stop.
+
+### 7e: Write the updated file
+
+Replace only the identified sections in the destination `CLAUDE.md` with the
+new tables. Leave all other content (project overview, stack, commands, gotchas,
+etc.) exactly as-is. Write the file back.
+
+Confirm: `CLAUDE.md agents/skills sections updated.`
