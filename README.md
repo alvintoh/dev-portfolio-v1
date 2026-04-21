@@ -47,20 +47,20 @@ Run `/arch-diagram` in Claude Code to regenerate these diagrams if the component
 
 #### Pages
 
-| Route | File | Description |
-| --- | --- | --- |
-| `/` | `src/app/page.tsx` | Home — fixed sidebar (hero, nav, social links) + scrollable content (about, experience, projects) |
-| `/techstack` | `src/app/techstack/page.tsx` | Tech Stack — scrollspy category nav + 12-category tool grid with brand icons |
+| Route        | File                         | Description                                                                                       |
+| ------------ | ---------------------------- | ------------------------------------------------------------------------------------------------- |
+| `/`          | `src/app/page.tsx`           | Home — fixed sidebar (hero, nav, social links) + scrollable content (about, experience, projects) |
+| `/techstack` | `src/app/techstack/page.tsx` | Tech Stack — scrollspy category nav + 12-category tool grid with brand icons                      |
 
 #### Key components
 
-| Component | Boundary | Description |
-| --- | --- | --- |
-| `ThemeProvider` | `"use client"` | Dark/light context provider; persists to `localStorage`; lives in root layout |
+| Component          | Boundary       | Description                                                                                    |
+| ------------------ | -------------- | ---------------------------------------------------------------------------------------------- |
+| `ThemeProvider`    | `"use client"` | Dark/light context provider; persists to `localStorage`; lives in root layout                  |
 | `HeaderNavigation` | `"use client"` | Sticky top nav with theme toggle, active-route highlight, mobile hamburger with portal overlay |
-| `HomeNavigation` | `"use client"` | Desktop-only scroll-spy nav using `IntersectionObserver` |
-| `TechStackGrid` | `"use client"` | Scrollspy sidebar + mobile pill strip (hide-on-scroll-down, reveal-on-scroll-up) |
-| `MouseGlow` | `"use client"` | `rAF`-throttled radial gradient cursor effect, desktop only, respects `prefers-reduced-motion` |
+| `HomeNavigation`   | `"use client"` | Desktop-only scroll-spy nav using `IntersectionObserver`                                       |
+| `TechStackGrid`    | `"use client"` | Scrollspy sidebar + mobile pill strip (hide-on-scroll-down, reveal-on-scroll-up)               |
+| `MouseGlow`        | `"use client"` | `rAF`-throttled radial gradient cursor effect, desktop only, respects `prefers-reduced-motion` |
 
 All section components (`HeroSection`, `AboutSection`, `ExperiencesSection`, `ProjectsSection`, `SocialLinks`, `Footer`) are Server Components — no `"use client"` boundary.
 
@@ -70,18 +70,18 @@ All content is static TypeScript defined in `src/data/`, organised into page-sco
 
 ### `src/data/home/`
 
-| File | Exported type | Description |
-| --- | --- | --- |
-| `hero-data.ts` | `HeroData` | Name, title, bio, and optional avatar path |
-| `experience-data.ts` | `Experience[]` | Work history cards with period, role, company, location, URL, description, and stack |
-| `project-data.ts` | `Project[]` | Portfolio cards with title, description, image path, stack, live URL, and optional GitHub stats |
-| `social-links-data.ts` | `Social[]` | Icon links — each entry holds a `react-icons` `IconType`, href, and accessible label |
-| `about-data.ts` | `AboutData` | About section copy with optional avatar, summary prose, and resume link |
+| File                   | Exported type  | Description                                                                                     |
+| ---------------------- | -------------- | ----------------------------------------------------------------------------------------------- |
+| `hero-data.ts`         | `HeroData`     | Name, title, bio, and optional avatar path                                                      |
+| `experience-data.ts`   | `Experience[]` | Work history cards with period, role, company, location, URL, description, and stack            |
+| `project-data.ts`      | `Project[]`    | Portfolio cards with title, description, image path, stack, live URL, and optional GitHub stats |
+| `social-links-data.ts` | `Social[]`     | Icon links — each entry holds a `react-icons` `IconType`, href, and accessible label            |
+| `about-data.ts`        | `AboutData`    | About section copy with optional avatar, summary prose, and resume link                         |
 
 ### `src/data/techstack/`
 
-| File | Exported type | Description |
-| --- | --- | --- |
+| File                 | Exported type    | Description                                                                                                                                 |
+| -------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | `tech-stack-data.ts` | `TechCategory[]` | 12 categories, 30+ tools — each tool has name, icon, author, URL, and description; each category has a label, icon, and rationale paragraph |
 
 Import via the `@/data/*` path alias (resolves to `./src/data/`):
@@ -109,13 +109,13 @@ transition:
 
 ### Token reference
 
-| Token | Dark (default) | Light (`data-theme="light"`) |
-| --- | --- | --- |
-| `--background` | `#1e1e2e` | `#f8fafc` |
-| `--foreground` | `#a6adc8` | `#3f4b5c` |
-| `--heading` | `#e2e8f0` | `#0f172a` |
-| `--accent` | `#54d8b9` | `#0f766e` |
-| `--surface` | `#313244` | `#e2e8f0` |
+| Token          | Dark (default) | Light (`data-theme="light"`) |
+| -------------- | -------------- | ---------------------------- |
+| `--background` | `#1e1e2e`      | `#f8fafc`                    |
+| `--foreground` | `#a6adc8`      | `#3f4b5c`                    |
+| `--heading`    | `#e2e8f0`      | `#0f172a`                    |
+| `--accent`     | `#54d8b9`      | `#0f766e`                    |
+| `--surface`    | `#313244`      | `#e2e8f0`                    |
 
 Additional tokens (`--accent-rgb`, `--glow-rgb`, `--glow-opacity`, `--glow-size`, `--glow-fade`) support the `MouseGlow` ambient cursor effect and are defined per theme in `globals.css`.
 
@@ -170,10 +170,10 @@ This workflow runs on every push and PR: **install** → **lint** → **typechec
 
 ### In progress
 
+- [ ] Currently exploring page for newest experiments and projects with new tools
 - [ ] CV download button in the hero section (one-click PDF; recruiter-critical above the fold)
 - [ ] Project archive page to showcase all past projects
 - [ ] Heroes / Inspiration list (GitHub contributors with a one-liner description)
-- [ ] Open to work status indicator driven by a data file (toggle availability without a code change)
 
 ### Planned
 
