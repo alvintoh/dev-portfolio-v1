@@ -146,4 +146,32 @@ Report:
 - How many files were synced
 - Destination path
 - Whether memory/ was preserved
-- Reminder: if destination has its own `CLAUDE.md`, the skills are now active there
+
+---
+
+## Step 7: Sync CLAUDE.md (optional)
+
+Check whether the source `CLAUDE.md` differs from the destination's:
+
+```bash
+diff CLAUDE.md "<destination>/CLAUDE.md" 2>/dev/null || echo "(destination has no CLAUDE.md)"
+```
+
+- If they are identical, print `CLAUDE.md is already up to date.` and stop.
+- If they differ (or destination has none), show a brief summary of what changed
+  (added/removed line counts from the diff output) and ask:
+
+```
+Update CLAUDE.md at destination?
+(y)es / (n)o
+```
+
+If `y` or `yes`, copy it:
+
+```bash
+cp CLAUDE.md "<destination>/CLAUDE.md"
+```
+
+Confirm: `CLAUDE.md updated.`
+
+If `n` or `no`, print `CLAUDE.md left unchanged.` and stop.
