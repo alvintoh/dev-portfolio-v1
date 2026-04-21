@@ -15,7 +15,7 @@ export default function TechStackPage() {
       <MouseGlow />
 
       <div className="mx-auto max-w-7xl px-6 py-8 md:px-12 lg:pt-16">
-        <div className="mb-6">
+        <div className="mb-4">
           <h1 className="text-4xl md:text-5xl font-bold text-heading">
             Tech Stack
           </h1>

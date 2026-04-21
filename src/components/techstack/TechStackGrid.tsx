@@ -80,10 +80,10 @@ export function TechStackGrid() {
 
   return (
     <>
-      {/* Mobile: sticky horizontal category pill strip — hidden by default, slides in on scroll-up */}
+      {/* Mobile: sticky horizontal category pill strip — collapsed by default, expands on scroll-up */}
       <div
-        className={`lg:hidden sticky top-10 z-10 -mx-6 md:-mx-12 mb-6 transition-transform duration-300 ease-in-out ${
-          mobileNavVisible ? "translate-y-0" : "-translate-y-full"
+        className={`lg:hidden sticky top-10 z-10 -mx-6 md:-mx-12 overflow-hidden transition-[max-height] duration-300 ease-in-out ${
+          mobileNavVisible ? "max-h-40" : "max-h-0"
         }`}
       >
         <div className="border-b border-foreground/10 bg-background/90 backdrop-blur-sm px-6 md:px-12">
@@ -150,7 +150,7 @@ export function TechStackGrid() {
               }}
               className="scroll-mt-28 lg:scroll-mt-24"
             >
-              <h2 className="mb-2 text-sm font-semibold tracking-widest uppercase text-heading">
+              <h2 className="mt-2 mb-2 text-sm font-semibold tracking-widest uppercase text-heading">
                 {category.label}
               </h2>
               <p className="mb-5 text-sm leading-relaxed max-w-2xl">
