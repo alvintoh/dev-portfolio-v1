@@ -101,10 +101,15 @@ Ask the user to confirm before proceeding:
 
 ```
 Proceed with sync? This will overwrite <destination>/.claude (except memory/).
-Type YES to continue or anything else to cancel.
+
+| Prompt   | Full word | Shorthand |
+|----------|-----------|-----------|
+| Proceed? | `yes`     | `y`       |
+| Proceed? | `no`      | `n` / `x` |
 ```
 
-If the user does not confirm, print `Sync cancelled.` and stop.
+If the user types `no`, `n`, or `x`, print `Sync cancelled.` and stop.
+If the user types anything other than `yes` or `y`, print `Sync cancelled.` and stop.
 
 ---
 
